@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">OntarioFish</string>
+    <string name="title_main_string">Ontario Fishing</string>
+    <string name="view_fish_button">View Fish</string>
+    <string name="record_size_card">Record: %1$s</string>
+    <string name="details_heading_one">Appearance</string>
+    <string name="details_heading_two">Size</string>
+    <string name="details_heading_three">Habitat and Range</string>
+
+    <!--Code for string selection in the FishDetails relies on specific naming format of "_overview", "_appearance" etc.-->
+    <!--Input data for northern pike.-->
+    <string name="northern_pike_overview">One of the most valuable commercial freshwater species in the northwest, the Northern Pike is a strong, persistent fighter attracting many fishermen because of the challenge it presents. </string>
+    <string name="northern_pike_appearance"><b>-</b>Large, elongated body.
+                                            \n\n<b>-</b>Dark green to brown body with light, yellowish or white spots.
+                                            \n\n<b>-</b>Dark back fades to creamy white belly.10
+                                            \n\n<b>-</b>Fully scaled cheek and partially scaled gill cover.
+                                            \n\n<b>-</b>10 pores on underside of lower jaw.</string>
+    <string name="northern_pike_size"><b>-</b>Length: 45-75 centimetres (18-30 inches)
+                                      \n\n<b>-</b>Weight: 0.9-4.3 kilograms (2-9.5 pounds)
+                                      \n\n<b>-</b>Ontario Record: 19.1 kilograms (42.1 pounds)</string>
+    <string name="northern_pike_habitat">As a cool-water species, the Northern Pike\'s habitat consists of slow, heavily vegetated rivers or the weedy bays of lakes. During the height of the summer, the Northern Pike
+                                        can be found in deep water to avoid high temperatures.
+                                        \n\nThe Northern Pike\'s breeding grounds include areas that flood only in the spring and early summer that may be dry the remainder of the year. Northern Pike swim through vegetated areas
+                                        of shallow water, randomly scattering eggs which then attach to the vegetation.</string>
+
+    <!--Input data for Largemouth Bass.-->
+    <string name="largemouth_bass_overview">The most popular gamefish in North America, the Largemouth Bass are sought after for there vigorous resistance.</string>
+    <string name="largemouth_bass_appearance"><b>-</b>Back and sides are green to olive.
+                                              \n\n<b>-</b>Broken Horizontal stripe along body.
+                                              \n\n<b>-</b>Large, wide lower jaw slightly longer than upper jaw.
+                                              \n\n<b>-</b>Two joined dorsal fins, separation more obvious than Smallmouth Bass.</string>
+    <string name="largemouth_bass_size"><b>-</b>Length: 25-55 centimetres (10-22 inches)
+                                              \n\n<b>-</b>Weight 0.7-1.8 koligrams (1.5-4 pounds)
+                                              \n\n<b>-</b>Ontario record: 4.7 kilograms (10.4 pounds)</string>
+    <string name="largemouth_bass_habitat">The Largemouth Bass can be found in the upper levels of warm water of small, shallow lakes or bays. It is almost always found close to soft bottoms, stumps
+                                           and in a variety of sub-emergent and emergent vegetation, especially waterlilies, cattails and pondweeds.
+                                           \n\nThe Largemouth Bass prefers spawning areas with a firm bottom of sand, mud or gravel.</string>
+
+    <!--Input data for Yellow Perch-->
+    <string name="yellow_perch_overview">The Yellow Perch is a freshwater fish with an almost circumpolar distribution in the northern hemisphere and is both a important recreational and commercial fish species.</string>
+    <string name="yellow_perch_appearance"><b>-</b>An elongate, oval body.
+                                           \n\n<b>-</b>Two well-seperated dorsal fins.
+                                           \n\n<b>-</b>6 to 8 dark, vertical bands on side.
+                                           \n\n<b>-</b>Light yellow body with white underside.
+                                           \n\n<b>-</b>Large mouth, extending to below the middle of the eye.</string>
+    <string name="yellow_perch_size"><b>-</b>Length: 15-30 centimetres (6-12 inches)
+                                     \n\n<b>-</b>Weight: 0.35 kilograms (0.75 pounds)
+                                     \n\n<b>-</b>Ontario record: 1.1 kilograms (2.4 pounds)</string>
+    <string name="yellow_perch_habitat">The Yellow Perch is a cool-water species and is most abundant in the open water of lakes with moderate vegetation, clear water and bottoms of muck, sand or gravel.
+                                        \n\nYellow Perch spawn in lake shallows or rivers near aquatic plants or other cover. Yellow Perch do not make nests.</string>
+
+    <!--Input data for Wallete-->
+    <string name="walleye_overview">The Walleye is a perch like fish and a keen eyesight with the oldest reported age for the fish being 29.</string>
+    <string name="walleye_appearance"><b>-</b>Large, elongated body.
+                                      \n\n<b>-</b>Back is olive-green to brown; side paler with yellow flecks.
+                                      \n\n<b>-</b>White tip on lower tail fin.
+                                      \n\n<b>-</b>Large teeth.
+                                      \n\n<b>-</b>Spiny and soft dorsal fins are separated.</string>
+    <string name="walleye_size"><b>-</b>Typical length: 35.5-58.4 centimetres (14-23 inches)
+                                \n\n<b>-</b>Typical weight: 0.68-1.36 kilograms (1.5-3 pounds)
+                                \n\n<b>-</b>Ontario record: 10.1 kilograms (22.3 pounds)</string>
+    <string name="walleye_habitat">Walleye are large predators adapted to low light and are found in large, shallow turbid lakes and the deeper waters of clear lakes.
+                                   \n\nSpawning occurs in small groups that engage in chasing, circular swimming and fin erection. Spawning can happen in both river rapids and lake shoals.</string>
+
+    <!--Input data for Muskellunge-->
+    <string name="muskellunge_overview">The Muskellunge is a large freshwater fish that can reach speeds of up to 48 kilometres per hour and can live for as long as 30 years.</string>
+    <string name="muskellunge_appearance"><b>-</b>Very large, elongated body.
+                                          \n\n<b>-</b>Dark vertical bands on light background, at time spotted or clear.
+                                          \n\n<b>-</b>Beige to white belly.
+                                          \n\n<b>-</b>Partially scaled cheek and gill cover.
+                                          \n\n<b>-</b>12-18 pores on underside of lower jaw.</string>
+    <string name="muskellunge_size"><b>-</b>Length: 71-137 centimetres (28-40 inches)
+                                            \n\n<b>-</b>Weight: 4-11 kilograms (8-23 pounds)
+                                            \n\n<b>-</b>Ontario record: 29.5 kilograms (65.0 pounds)</string>
+    <string name="muskellunge_habitat">Muskellunge inhabit clear vegetated lakes, quiet pools, and the backwater of creeks and small to large rivers.</string>
+
+    <!--Input data for Rock Bass-->
+    <string name="rock_bass_overview">The Rock Bass is a freshwater fish native to east-central North America with its defining characteristic being a large red eye.</string>
+    <string name="rock_bass_appearance"><b>-</b>Small and deep-bodied.
+                                        \n\n<b>-</b>Large, red eye.
+                                        \n\n<b>-</b>Adults have regular rows of spots along the side.
+                                        \n\n<b>-</b>Back and upper sides are brown to olive.
+                                        \n\n<b>-</b>Dorsal fin has 10 to 13 spines.</string>
+    <string name="rock_bass_size"><b>-</b>Length: 15-20 centimetres (6-8 inches)
+                                  \n\n<b>-</b>Weight: 0.2 kilograms (0.4 pounds)
+                                  \n\n<b>-</b>Ontario record: 1.4 kilograms (3.0 pounds)</string>
+    <string name="rock_bass_habitat">Rock Bass prefer clear, rocky and vegetated stream pools and lake margins. Rock can also commonly be seen swimming with other sunfish and bass.
+                                     \n\nWhen spawning, males will build nests in shallow waters ranging from marshes to gravel sites.</string>
+
+    <!--Input data for White Crappie-->
+    <string name="white_crappie_overview">The White Crappie is a moderately large, fresh water fish that has deep, slightly longer body than a black crappie.</string>
+    <string name="white_crappie_appearance"><b>-</b>Six dorsal fin spines.
+                                            \n\n<b>-</b>6 or 7 anal fin spines.
+                                            \n\n<b>-</b>Side of the body has faint vertical bars.</string>
+    <string name="white_crappie_size"><b>-</b>Length: 20-30 centimetres (8-12 inches)
+                                      \n\n<b>-</b>Weight: 0.1 - 0.23 kilograms (0.25 - 0.5 pounds)
+                                      \n\n<b>-</b>Ontario record: 1.26 kilograms (2.78 pounds)</string>
+    <string name="white_crappie_habitat">The White Crappie resides in the mouths of small creeks or streams and in weedy, sheltered bays.
+                                         \n\nWhile spawning occurs on a variety of bottom types, the White Crappie tend to spawn adjacent to aquatic plants or undercut banks.</string>
+
+    <!--Input data for Common Carp-->
+    <string name="common_carp_overview">The Common Carp is a fish that is widely distributed throughout North America despite being originally introduced in the 1880\'s by Europeans.</string>
+    <string name="common_carp_appearance"><b>-</b>Large, deep-bodied fish.
+                                          \n\n<b>-</b>Barbels (whiskers) beside mouth.
+                                          \n\n<b>-</b>Back and sides vary from silver to olive-green, brassy or grey.
+                                          \n\n<b>-</b>Yellowish belly.
+                                          \n\n<b>-</b>Partially scaled sheek and gill cover.</string>
+    <string name="common_carp_size"><b>-</b>Length: 30-75 centimetres (12-30 inches)
+                                    \n\n<b>-</b>Width: 0.2-3.5 kilograms (0.5-7 pounds)
+                                    \n\n<b>-</b>Ontario record: 17.4 kilograms (38.5 pounds)</string>
+    <string name="common_carp_habitat">The Common Carp is able to adapt to a large variety of habitats including warm,shallow, weedy lakes and river to urban areas and habitats typically unsuitable for other fish.
+                                       \n\nCarp typically in weedy,grassy, shallow areas of lakes and watercourses, usually about 2-3 feet deep. </string>
+    <string name="view_regulations_button">View Regulations</string>
+
+</resources>
