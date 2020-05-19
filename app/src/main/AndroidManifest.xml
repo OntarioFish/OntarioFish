@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FishDetails"></activity>
+        <activity android:name=".FishRegulations"></activity>
+        <activity android:name=".FishDetails" />
         <activity
             android:name=".FishInfo"
             android:parentActivityName=".MainActivity" />

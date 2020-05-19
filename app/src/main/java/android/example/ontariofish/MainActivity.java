@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mVideoView = (VideoView) findViewById(R.id.background_video);
+        mViewRegsButton = (Button) findViewById(R.id.regulations_button);
         Window window = getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, FishInfo.class));
+            }
+        });
+
+        mViewRegsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FishRegulations.class));
             }
         });
 

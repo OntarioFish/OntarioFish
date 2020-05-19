@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_rounded"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/bigshot_one"
         android:text="@string/view_regulations_button"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
