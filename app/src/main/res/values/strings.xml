@@ -110,9 +110,13 @@
                                     \n\n<b>-</b>Ontario record: 17.4 kilograms (38.5 pounds)</string>
     <string name="common_carp_habitat">The Common Carp is able to adapt to a large variety of habitats including warm,shallow, weedy lakes and river to urban areas and habitats typically unsuitable for other fish.
                                        \n\nCarp typically in weedy,grassy, shallow areas of lakes and watercourses, usually about 2-3 feet deep. </string>
+
+    <!--Input data for Rainbow Trout-->
+    <String name="rainbow_trout_overview"></String>
     <string name="view_regulations_button">View Regulations</string>
     <string name="select_zone_text">Select your zone:</string>
     <string name="title_activity_maps">Map</string>
     <string name="view_map_button">View Map</string>
+    <string name="title_activity_maps2">Map</string>
 
 </resources>
