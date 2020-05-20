@@ -112,5 +112,7 @@
                                        \n\nCarp typically in weedy,grassy, shallow areas of lakes and watercourses, usually about 2-3 feet deep. </string>
     <string name="view_regulations_button">View Regulations</string>
     <string name="select_zone_text">Select your zone:</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="view_map_button">View Map</string>
 
 </resources>

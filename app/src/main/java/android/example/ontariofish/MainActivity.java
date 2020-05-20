@@ -17,7 +17,8 @@ import android.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
 
     private VideoView mVideoView;
-    private Button mFishInfoButton, mViewRegsButton;
+    private Button mFishInfoButton, mViewRegsButton,mMapsButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
+        mMapsButton = (Button)findViewById(R.id.view_map);
         mVideoView = (VideoView) findViewById(R.id.background_video);
         mViewRegsButton = (Button) findViewById(R.id.regulations_button);
         Window window = getWindow();
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, FishRegulations.class));
             }
         });
+        mMapsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+            }
+        });
+
 
     }
 
