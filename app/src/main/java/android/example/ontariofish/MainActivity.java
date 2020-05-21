@@ -19,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
     private VideoView mVideoView;
     private Button mFishInfoButton, mViewRegsButton,mMapsButton;
 
+    DatabaseHelper MyDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MyDb = new DatabaseHelper(this);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
