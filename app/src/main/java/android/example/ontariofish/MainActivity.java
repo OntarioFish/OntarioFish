@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("android.resource://"+ getPackageName() + "/" + R.raw.output);
         mVideoView.setVideoURI(uri);
 
+        MyDb.insertDataFishInfo("dog", "cat");
+
 
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

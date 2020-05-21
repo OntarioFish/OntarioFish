@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "OntarioFishDb.db";
+    public static final String DATABASE_NAME = "OntarioFish2.db";
     public static final String FISH_TABLE = "FishInfo";
     public static final String FISH_REGULATIONS_TABLE = "FishRegulations";
     public static final String FISHINFOCOL1 = "NAME";
