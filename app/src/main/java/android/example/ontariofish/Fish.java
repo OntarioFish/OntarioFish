@@ -7,13 +7,11 @@ import android.os.Parcelable;
 public class Fish implements Parcelable {
 
     private String name;
-    private String recordCaught;
     private int photo;
     private String resourceName;
 
-    public Fish(String name, String record, int photo, String resourceName) {
+    public Fish(String name, int photo, String resourceName) {
         this.name = name;
-        this.recordCaught = record;
         this.photo = photo;
         this.resourceName = resourceName;
 
@@ -21,7 +19,6 @@ public class Fish implements Parcelable {
 
     public Fish(Parcel source){
         this.name = source.readString();
-        this.recordCaught = source.readString();
         this.photo = source.readInt();
         this.resourceName = source.readString();
     }
@@ -47,17 +44,11 @@ public class Fish implements Parcelable {
         this.name = name;
     }
 
-    public String getRecordCaught() {
-        return recordCaught;
-    }
 
     public String getResourceName() {
         return resourceName;
     }
 
-    public void setRecordCaught(String recordCaught) {
-        this.recordCaught = recordCaught;
-    }
 
     public void setPhoto(int photo){
         this.photo = photo;
@@ -76,7 +67,6 @@ public class Fish implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeString(recordCaught);
         dest.writeInt(photo);
         dest.writeString(resourceName);
     }
