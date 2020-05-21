@@ -9,6 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -24,7 +25,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
+    // bounds of the desired area
 
     /**
      * Manipulates the map once available.
@@ -40,8 +41,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng Ontario = new LatLng(51.833568, -86.997632);
+        LatLng Southwest = new LatLng(41.721325, -95.150434);
+        LatLng NorthEast = new LatLng(57.910221, -74.343067);
+        LatLngBounds OntarioRestrict = new LatLngBounds(Southwest, NorthEast);
+        mMap.setLatLngBoundsForCameraTarget(OntarioRestrict);
+
+        mMap.addMarker(new MarkerOptions().position(Ontario).title("Marker in Ontario"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Ontario));
+
     }
 }
