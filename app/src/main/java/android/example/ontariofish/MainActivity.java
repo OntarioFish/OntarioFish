@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Database object is initialized - see DatabaseHelper class for functions
         MyDb = new DatabaseHelper(this);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
@@ -48,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("android.resource://"+ getPackageName() + "/" + R.raw.output);
         mVideoView.setVideoURI(uri);
 
-        readDataFishInfo();
+        /* Creates a test Array to see if the database has already been created,
+         in order to avoid needless processing */
+        String[] checker = MyDb.getInfo("Walleye");
+        if (checker[0].equals("0")) {
+            readDataFishInfo();
+        }
 
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -87,18 +93,18 @@ public class MainActivity extends AppCompatActivity {
         mVideoView.start();
     }
 
+    /* Function reads lines of data from fishinfo.txt, which can be found in the "raw" folder
+    under the resource files folder */
     public void readDataFishInfo(){
 
         InputStream is = getResources().openRawResource(R.raw.fishinfo);
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is)
-        );
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line;
 
+        //Reads the whole file, and adds each line to an object belonging to the FishSample class
         try{
             while((line = reader.readLine()) != null){
-                System.out.println(line);
 
                 String[] tokens = line.split("//");
 
@@ -116,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //Separates the object's attributes into strings, which are inserted into the "FishInfo" table
         for (int i = 0; i < fishSamples.size(); i++){
 
             String currentName = fishSamples.get(i).getName();

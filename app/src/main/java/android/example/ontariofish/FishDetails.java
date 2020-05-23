@@ -3,6 +3,7 @@ package android.example.ontariofish;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -12,15 +13,22 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class FishDetails extends AppCompatActivity {
 
     private TextView title, overview, fishAppearance, fishSize, fishHabitat;
     private ImageView fishPhoto, fishRange;
 
+    DatabaseHelper FishDetailsDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_details);
+
+        //Database object is initialized - see DatabaseHelper class for functions
+        FishDetailsDB = new DatabaseHelper(this);
 
         Window window = getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
@@ -36,16 +44,17 @@ public class FishDetails extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         Fish fish = (Fish)data.getParcelable("FISHES");
 
+        //Array is created, with each entry corresponding to title, overview, appearance, size, and habitat
+        String[] FishInfoArray = FishDetailsDB.getInfo(fish.getName());
 
-        title.setText(fish.getName());
-
+        title.setText(FishInfoArray[0]);
 
         fishPhoto.setImageResource(getResourceId("drawable", "_info", fish));
-        overview.setText(getResourceId("string", "_overview", fish));
-        fishAppearance.setText(getResourceId("string", "_appearance", fish));
-        fishSize.setText(getResourceId("string", "_size", fish));
+        overview.setText(FishInfoArray[1]);
+        fishAppearance.setText(FishInfoArray[2]);
+        fishSize.setText(FishInfoArray[3]);
         fishRange.setImageResource(getResourceId("drawable", "_range", fish));
-        fishHabitat.setText(getResourceId("string", "_habitat", fish));
+        fishHabitat.setText(FishInfoArray[4]);
     }
 
     public int getResourceId(String type, String info, Fish fish){

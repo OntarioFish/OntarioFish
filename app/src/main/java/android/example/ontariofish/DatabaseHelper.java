@@ -1,18 +1,21 @@
+/*Class manages database and database functions specific to OntarioFish
+***DO NOT EDIT***
+Bruce Stuff
+ */
+
 package android.example.ontariofish;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    //Strings are initialized to make code more readable later on
     public static final String DATABASE_NAME = "OntarioFish.db";
     public static final String FISH_TABLE = "FishInfo";
     public static final String FISH_REGULATIONS_TABLE = "FishRegulations";
@@ -40,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //If database gets upgraded
+    //If database gets upgraded, moves everything correctly
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + FISH_TABLE);
@@ -49,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    //Inserts into the Fish Info table
+    //Inserts all fish info into the FishInfo table
     public boolean insertDataFishInfo(String name, String overview, String appearance, String size, String habran){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -68,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    //Inserts into the regulations table
+    //Inserts all info into the FishRegulations table
     public boolean insertDataFishRegulations(String name, String lake){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -82,6 +85,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
 
+    }
+
+    //Returns an array consisting of fish name, overview, appearance, size, and habitat
+    public String[] getInfo(String fish){
+        String[] fishArray = {"0","0","0","0","0"};
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        try {
+            //SQL query, gets all info where the fish name is the name passed into the function
+            Cursor res = db.rawQuery("SELECT * FROM " + FISH_TABLE + " WHERE NAME = '" + fish + "'", null);
+
+            /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
+            through all the rows */
+            res.moveToFirst();
+            fishArray[0] = (res.getString(0));
+            fishArray[1] = (res.getString(1));
+            fishArray[2] = (res.getString(2));
+            fishArray[3] = (res.getString(3));
+            fishArray[4] = (res.getString(4));
+
+            return fishArray;
+
+        } catch(Exception e){
+            return fishArray;
+        }
     }
 
     //Deletes a table: NO EASY WAY TO RECREATE

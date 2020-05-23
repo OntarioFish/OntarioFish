@@ -1,3 +1,8 @@
+/*Class here specifically for the purpose of reading from fishinfo.txt
+***DO NOT EDIT***
+Bruce Stuff
+ */
+
 package android.example.ontariofish;
 
 class FishSample {
