@@ -13,18 +13,30 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.VideoView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private VideoView mVideoView;
     private Button mFishInfoButton, mViewRegsButton,mMapsButton;
 
+    public List<FishSample> fishSamples= new ArrayList<>();
+
+    DatabaseHelper MyDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MyDb = new DatabaseHelper(this);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
@@ -36,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("android.resource://"+ getPackageName() + "/" + R.raw.output);
         mVideoView.setVideoURI(uri);
 
+        readDataFishInfo();
 
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -74,5 +87,46 @@ public class MainActivity extends AppCompatActivity {
         mVideoView.start();
     }
 
+    public void readDataFishInfo(){
+
+        InputStream is = getResources().openRawResource(R.raw.fishinfo);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is)
+        );
+
+        String line;
+
+        try{
+            while((line = reader.readLine()) != null){
+                System.out.println(line);
+
+                String[] tokens = line.split("//");
+
+                FishSample sample = new FishSample();
+                sample.setName(tokens[0]);
+                sample.setDescription(tokens[1]);
+                sample.setAppearance(tokens[2]);
+                sample.setSize(tokens[3]);
+                sample.setHabran(tokens[4]);
+
+                fishSamples.add(sample);
+
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < fishSamples.size(); i++){
+
+            String currentName = fishSamples.get(i).getName();
+            String currentOverview = fishSamples.get(i).getDescription();
+            String currentAppearance = fishSamples.get(i).getAppearance();
+            String currentSize = fishSamples.get(i).getSize();
+            String currentHabran = fishSamples.get(i).getHabran();
+
+            MyDb.insertDataFishInfo(currentName, currentOverview, currentAppearance, currentSize, currentHabran);
+        }
+
+    }
 
 }
