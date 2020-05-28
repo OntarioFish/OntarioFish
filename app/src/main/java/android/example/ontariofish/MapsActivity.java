@@ -3,14 +3,21 @@ package android.example.ontariofish;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.data.Feature;
+import com.google.maps.android.data.kml.KmlLayer;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -24,6 +31,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
     // bounds of the desired area
 
@@ -40,15 +49,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng Ontario = new LatLng(51.833568, -86.997632);
         LatLng Southwest = new LatLng(41.721325, -95.150434);
         LatLng NorthEast = new LatLng(57.910221, -74.343067);
         LatLngBounds OntarioRestrict = new LatLngBounds(Southwest, NorthEast);
-        mMap.setLatLngBoundsForCameraTarget(OntarioRestrict);
 
-        mMap.addMarker(new MarkerOptions().position(Ontario).title("Marker in Ontario"));
+
+        KmlLayer work = addLayer(R.raw.fish_zones);
+
+        work.addLayerToMap();
+
+        mMap.setLatLngBoundsForCameraTarget(OntarioRestrict);
+        work.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
+            @Override
+            public void onFeatureClick(Feature feature) {
+                Toast.makeText(MapsActivity.this, "DOES THIS WORK" + feature.getId(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        UiSettings uiSettings = mMap.getUiSettings();
+        uiSettings.setZoomControlsEnabled(true);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Ontario));
 
+
+
     }
+
+    public KmlLayer addLayer(int resourceId){
+
+        try {
+            return new KmlLayer(mMap, resourceId, this);
+        } catch (IOException | XmlPullParserException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
 }
