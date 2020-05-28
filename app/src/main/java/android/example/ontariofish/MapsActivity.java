@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.data.Feature;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
+import com.google.maps.android.data.geojson.GeoJsonPolygon;
 import com.google.maps.android.data.kml.KmlLayer;
 import com.google.maps.android.data.kml.KmlPolygon;
 
@@ -23,6 +24,7 @@ import org.json.JSONException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -60,8 +62,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng NorthEast = new LatLng(57.910221, -74.343067);
         //LatLngBounds OntarioRestrict = new LatLngBounds(Southwest, NorthEast);
 
-       // KmlLayer zone1 = addLayer(R.raw.zone1);
-   //     KmlLayer work = addLayer(R.raw.plzwork);
+//        KmlLayer zone1 = addLayer(R.raw.zone1);
+        KmlLayer work = addLayer(R.raw.plzwork);
 //        KmlLayer zone2 = addLayer(R.raw.zone2);
 //        KmlLayer zone3 = addLayer(R.raw.zone3);
 //        KmlLayer zone4 = addLayer(R.raw.zone4);
@@ -81,9 +83,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        KmlLayer zone19 = addLayer(R.raw.zone19);
 //        KmlLayer zone17 = addLayer(R.raw.zone17);
 //        KmlLayer zone20 = addLayer(R.raw.zone20);
- //       zone1.addLayerToMap();
-//        work.addLayerToMap();
+//        zone1.addLayerToMap();
+        work.addLayerToMap();
 //        zone2.addLayerToMap();
+
 //        zone3.addLayerToMap();
 //        zone4.addLayerToMap();
 //        zone5.addLayerToMap();
@@ -103,10 +106,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        zone17.addLayerToMap();
 //        zone20.addLayerToMap();
         //mMap.setLatLngBoundsForCameraTarget(OntarioRestrict);
+        work.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
+            @Override
+            public void onFeatureClick(Feature feature) {
+                Toast.makeText(MapsActivity.this, "DOES THIS WORK" + feature.getId(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
-        GeoJsonLayer testing  = addLayer(R.raw.plztest);
-    //    testing.addLayerToMap();
+        //GeoJsonLayer testing  = addLayer(R.raw.plztest);
+  // testing.addLayerToMap();
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
 
@@ -115,16 +123,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-
-
-
     }
 
-    public GeoJsonLayer addLayer(int resourceId){
+    public KmlLayer addLayer(int resourceId){
 
         try {
-            return new GeoJsonLayer(mMap, resourceId, this);
-        } catch (IOException | JSONException e) {
+            return new KmlLayer(mMap, resourceId, this);
+        } catch (IOException | XmlPullParserException e) {
             e.printStackTrace();
         }
 
