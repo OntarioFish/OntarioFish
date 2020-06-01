@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fish_array">
+        <item>Northern Pike</item>
+        <item>Largemouth Bass</item>
+        <item>Walleye</item>
+        <item>Muskellunge</item>
+        <item>Rock Bass</item>
+        <item>Yellow Perch</item>
+        <item>White Crappie</item>
+        <item>Common Carp</item>
+        <item>Channel Catfish</item>
+        <item>Smallmouth Bass</item>
+        <item>Brook Trout</item>
+        <item>Rainbow Trout</item>
+        <item>Pumpkinseed</item>
+        <item>Lake Trout</item>
+    </string-array>
+</resources>

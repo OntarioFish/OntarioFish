@@ -2,6 +2,7 @@ package android.example.ontariofish;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -63,7 +64,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         work.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
             @Override
             public void onFeatureClick(Feature feature) {
-                Toast.makeText(MapsActivity.this, "DOES THIS WORK" + feature.getId(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapsActivity.this,  feature.getId(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
+                intent.putExtra("ZONE", feature.getId());
+                startActivity(intent);
             }
         });
 
