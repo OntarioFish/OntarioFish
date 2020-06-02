@@ -40,7 +40,17 @@ public class FishRegulations extends AppCompatActivity {
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
         regulationFish = setTitle(zoneName);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.fish_array, android.R.layout.simple_spinner_item);
+        /*
+            Below array list is used for testing. It works with the array list created below
+         */
+        ArrayList<String> testing =  new ArrayList<String>();
+        testing.add("herro");
+        testing.add("YES");
+
+        //This system.out crashes the app. Pretty sure it is out of bounds or something.
+        System.out.println(regulationFish.get(0));
+        //Replace the last word in the line testing with regulationFish and it should be working but doesnt for me.
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, testing);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fishSelect.setAdapter(adapter);
