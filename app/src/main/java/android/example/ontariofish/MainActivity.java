@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private VideoView mVideoView;
     private Button mFishInfoButton, mViewRegsButton,mMapsButton;
 
-    public List<FishSample> fishSamples= new ArrayList<>();
+    public List<RegulationSample> regulationSamples= new ArrayList<>();
+    public List<ExceptionSample> exceptionSamples= new ArrayList<>();
 
     DatabaseHelper MyDb;
 
@@ -51,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
         /* Creates a test Array to see if the database has already been created,
          in order to avoid needless processing */
-        String[] checker = MyDb.getInfo("Walleye");
+        String[] checker = MyDb.getRegulationsInfo("1", "Brook Trout");
         if (checker[0].equals("0")) {
             readDataFishInfo();
+        }
+
+        String[] checker2 = MyDb.getExceptionsInfo("2", "Brook Trout", "Blue Lake");
+        if (checker2[0].equals("0")) {
+            readDataFishExceptions();
         }
 
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -93,29 +99,28 @@ public class MainActivity extends AppCompatActivity {
         mVideoView.start();
     }
 
-    /* Function reads lines of data from fishinfo.txt, which can be found in the "raw" folder
+    /* Function reads lines of data from speciesregulations.txt, which can be found in the "raw" folder
     under the resource files folder */
     public void readDataFishInfo(){
 
-        InputStream is = getResources().openRawResource(R.raw.fishinfo);
+        InputStream is = getResources().openRawResource(R.raw.speciesregulations);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line;
 
-        //Reads the whole file, and adds each line to an object belonging to the FishSample class
+        //Reads the whole file, and adds each line to an object belonging to the FishRegulation class
         try{
             while((line = reader.readLine()) != null){
 
                 String[] tokens = line.split("//");
 
-                FishSample sample = new FishSample();
-                sample.setName(tokens[0]);
-                sample.setDescription(tokens[1]);
-                sample.setAppearance(tokens[2]);
-                sample.setSize(tokens[3]);
-                sample.setHabran(tokens[4]);
+                RegulationSample sample = new RegulationSample();
+                sample.setRegion(tokens[0]);
+                sample.setName(tokens[1]);
+                sample.setSeason(tokens[2]);
+                sample.setLimits(tokens[3]);
 
-                fishSamples.add(sample);
+                regulationSamples.add(sample);
 
             }
         } catch (IOException e){
@@ -123,17 +128,57 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Separates the object's attributes into strings, which are inserted into the "FishInfo" table
-        for (int i = 0; i < fishSamples.size(); i++){
+        for (int i = 0; i < regulationSamples.size(); i++){
 
-            String currentName = fishSamples.get(i).getName();
-            String currentOverview = fishSamples.get(i).getDescription();
-            String currentAppearance = fishSamples.get(i).getAppearance();
-            String currentSize = fishSamples.get(i).getSize();
-            String currentHabran = fishSamples.get(i).getHabran();
+            String currentRegion = regulationSamples.get(i).getRegion();
+            String currentName = regulationSamples.get(i).getName();
+            String currentSeason = regulationSamples.get(i).getSeason();
+            String currentLimits = regulationSamples.get(i).getLimits();
 
-            MyDb.insertDataFishInfo(currentName, currentOverview, currentAppearance, currentSize, currentHabran);
+            MyDb.insertDataFishRegulations(currentRegion, currentName, currentSeason, currentLimits);
+        }
+    }
+
+    public void readDataFishExceptions(){
+
+        InputStream is = getResources().openRawResource(R.raw.speciesexceptions);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line;
+
+        //Reads the whole file, and adds each line to an object belonging to the FishRegulation class
+        try{
+            while((line = reader.readLine()) != null){
+
+                String[] tokens = line.split("//");
+
+                ExceptionSample sample = new ExceptionSample();
+                sample.setRegion(tokens[0]);
+                sample.setName(tokens[1]);
+                sample.setLake(tokens[2]);
+                sample.setInfo(tokens[3]);
+                sample.setSeason(tokens[4]);
+                sample.setLimits(tokens[5]);
+
+                exceptionSamples.add(sample);
+
+            }
+        } catch (IOException e){
+            e.printStackTrace();
         }
 
+        //Separates the object's attributes into strings, which are inserted into the "FishInfo" table
+        for (int i = 0; i < exceptionSamples.size(); i++){
+
+            String currentRegion = exceptionSamples.get(i).getRegion();
+            String currentName = exceptionSamples.get(i).getName();
+            String currentLake = exceptionSamples.get(i).getLake();
+            String currentInfo = exceptionSamples.get(i).getInfo();
+            String currentSeason = exceptionSamples.get(i).getSeason();
+            String currentLimits = exceptionSamples.get(i).getLimits();
+
+            MyDb.insertDataFishExceptions(currentRegion, currentName, currentLake, currentInfo, currentSeason, currentLimits);
+        }
     }
 
 }
