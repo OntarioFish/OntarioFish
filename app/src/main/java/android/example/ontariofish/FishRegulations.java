@@ -21,14 +21,18 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     private TextView zoneTitle;
     private Spinner fishSelect;
     private int regionNumber;
+    private String[] fishInfo = new String[2];
 
+    private DatabaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_regulations);
 
+        //Stores fish names based on region selected. Used for the fish spinner dropdown list
         List<String> regulationFish= new ArrayList<>();
+        DB = new DatabaseHelper(this);
 
         Window window = getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
@@ -40,8 +44,6 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
         regulationFish = setTitle(zoneName);
 
-        System.out.println(regulationFish.get(0));
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, regulationFish);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -50,8 +52,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     }
 
     public List<String> setTitle(String zoneName){
-        DatabaseHelper DB;
-        DB = new DatabaseHelper(this);
+
         List<String> regulationFishTemp= new ArrayList<>();
         switch(zoneName){
             case "#zone1":
@@ -163,6 +164,8 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(FishRegulations.this, (String)parent.getItemAtPosition(position), Toast.LENGTH_LONG).show();
 
+        //first position is the season, second position is the limits
+        fishInfo = DB.getRegulationsInfo(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
     }
 
     @Override

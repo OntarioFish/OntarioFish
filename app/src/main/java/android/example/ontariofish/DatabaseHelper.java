@@ -77,6 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //Inserts a row into the fishExceptions table
     public boolean insertDataFishExceptions(String region, String name, String lake, String info, String season, String limits){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -98,7 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Returns an array consisting of fish name, overview, appearance, size, and habitat
     public String[] getRegulationsInfo(String region, String fish){
-        String[] regulationsArray = {"0","0","0","0"};
+        String[] regulationsArray = {"0","0"};
         SQLiteDatabase db = this.getWritableDatabase();
 
         try {
@@ -108,10 +109,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
             through all the rows */
             res.moveToFirst();
-            regulationsArray[0] = (res.getString(0));
-            regulationsArray[1] = (res.getString(1));
-            regulationsArray[2] = (res.getString(2));
-            regulationsArray[3] = (res.getString(3));
+            regulationsArray[0] = (res.getString(2));
+            regulationsArray[1] = (res.getString(3));
 
             return regulationsArray;
 
@@ -120,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //Returns all information about species exceptions
     public String[] getExceptionsInfo(String region, String name, String lake){
         String[] exceptionsArray = {"0","0","0","0","0","0"};
         SQLiteDatabase db = this.getWritableDatabase();
@@ -145,6 +145,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    //Returns names of fish in a list based on their region
     public List<String> getRegulationsFish(String region){
         List<String> regulationsFish = new ArrayList<String>();
         SQLiteDatabase db = this.getWritableDatabase();
