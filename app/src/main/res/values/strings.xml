@@ -11,5 +11,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="view_map_button">View Map</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="zone_limit_heading">Limits</string>
+    <string name="zone_season_heading">Season</string>
 
 </resources>
