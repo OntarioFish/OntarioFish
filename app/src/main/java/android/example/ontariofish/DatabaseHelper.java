@@ -172,6 +172,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public List<String> getExceptionsLake(String region, String name){
+        List<String> exceptionsLake = new ArrayList<String>();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        try {
+            //SQL query, gets all info where the fish name is the name passed into the function
+            Cursor res = db.rawQuery("SELECT LAKE FROM " + FISH_EXCEPTIONS_TABLE + " WHERE REGION = '" + region + "' AND NAME = '" + name + "'" , null);
+
+            /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
+            through all the rows */
+
+            res.moveToFirst();
+            while (!res.isAfterLast()) {
+                exceptionsLake.add(res.getString(0));
+
+                res.moveToNext();
+            }
+
+            return exceptionsLake;
+
+        } catch(Exception e){
+            return exceptionsLake;
+        }
+    }
+
     //Deletes a table: NO EASY WAY TO RECREATE
     public void dropTable(String tableName){
         SQLiteDatabase db = this.getWritableDatabase();

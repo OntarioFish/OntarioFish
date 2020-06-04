@@ -22,6 +22,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     private Spinner fishSelect;
     private int regionNumber;
     private String[] fishInfo = new String[2];
+    private List<String> lakeList = new ArrayList<>();
 
     private DatabaseHelper DB;
 
@@ -166,6 +167,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         //first position is the season, second position is the limits
         fishInfo = DB.getRegulationsInfo(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
+        lakeList = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
     }
 
     @Override
