@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    //test
     private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo;
     private Spinner fishSelect;
     private AutoCompleteTextView lakeList;
