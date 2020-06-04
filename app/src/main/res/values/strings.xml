@@ -13,5 +13,6 @@
     <string name="title_activity_maps2">Map</string>
     <string name="zone_limit_heading">Limits</string>
     <string name="zone_season_heading">Season</string>
+    <string name="exception_hint">Enter lake for potential exceptions</string>
 
 </resources>

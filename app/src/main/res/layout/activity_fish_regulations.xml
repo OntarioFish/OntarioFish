@@ -38,7 +38,7 @@
         android:id="@+id/zone_season"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:gravity="center"
         android:layout_margin="8dp"/>
 
@@ -55,8 +55,15 @@
         android:id="@+id/zone_limit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:gravity="center"
+        android:layout_margin="8dp"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/lake_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/exception_hint"
         android:layout_margin="8dp"/>
 
 

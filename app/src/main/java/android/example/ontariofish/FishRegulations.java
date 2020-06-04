@@ -8,18 +8,22 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private TextView zoneTitle;
+    private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo;
     private Spinner fishSelect;
+    private AutoCompleteTextView lakeList;
     private int regionNumber;
     private String[] fishInfo = new String[2];
 
@@ -39,9 +43,11 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         Bundle extras = getIntent().getExtras();
         String zoneName = extras.getString("ZONE");
-
+        lakeList = (AutoCompleteTextView) findViewById(R.id.lake_list);
         zoneTitle = (TextView)findViewById(R.id.zone_title);
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
+        zoneLimitInfo = (TextView)findViewById(R.id.zone_limit);
+        zoneSeasonInfo = (TextView)findViewById(R.id.zone_season);
         regulationFish = setTitle(zoneName);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, regulationFish);
@@ -49,6 +55,8 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fishSelect.setAdapter(adapter);
         fishSelect.setOnItemSelectedListener(this);
+
+
     }
 
     public List<String> setTitle(String zoneName){
@@ -166,6 +174,8 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         //first position is the season, second position is the limits
         fishInfo = DB.getRegulationsInfo(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
+        zoneLimitInfo.setText(fishInfo[1]);
+        zoneSeasonInfo.setText(fishInfo[0]);
     }
 
     @Override
