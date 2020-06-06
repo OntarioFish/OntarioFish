@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -36,14 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //Database object is initialized - see DatabaseHelper class for functions
         MyDb = new DatabaseHelper(this);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
         mViewRegsButton = (Button) findViewById(R.id.regulations_button);
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
 
         /* Creates a test Array to see if the database has already been created,

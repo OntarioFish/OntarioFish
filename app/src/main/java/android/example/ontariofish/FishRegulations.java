@@ -19,8 +19,6 @@ public class FishRegulations extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_regulations);
 
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
         Bundle extras = getIntent().getExtras();
         String zoneName = extras.getString("ZONE");

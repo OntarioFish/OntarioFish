@@ -28,8 +28,6 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_info);
 
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
