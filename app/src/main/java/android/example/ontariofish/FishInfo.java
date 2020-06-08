@@ -88,8 +88,6 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
 
     @Override
     public void onCardClick(int position) {
-        Log.d("What up gthang", "onCardClick: clicked.");
-        System.out.println(fishList.get(position).getName());
         Intent intent = new Intent(FishInfo.this, FishDetails.class);
         intent.putExtra("FISHES", fishList.get(position));
         startActivity(intent);

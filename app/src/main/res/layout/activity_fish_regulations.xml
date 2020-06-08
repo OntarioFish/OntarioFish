@@ -23,8 +23,64 @@
         android:id="@+id/fish_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"/>
+        android:layout_margin="16dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zone_season_heading"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/zone_season"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zone_limit_heading"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/zone_limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_margin="16dp"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/lake_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/exception_hint"
+        android:layout_margin="16dp"/>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_fish_info"
+            android:layout_height="56dp"
+            android:layout_width="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/fab_icon"
+            android:backgroundTint="@color/statusBarColor"/>
+
+    </RelativeLayout>
 
 
 </LinearLayout>
