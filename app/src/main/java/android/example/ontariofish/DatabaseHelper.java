@@ -121,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Returns all information about species exceptions
     public String[] getExceptionsInfo(String region, String name, String lake){
-        String[] exceptionsArray = {"0","0","0","0","0","0"};
+        String[] exceptionsArray = {"0","0","0"};
         SQLiteDatabase db = this.getWritableDatabase();
 
         try {
@@ -131,12 +131,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
             through all the rows */
             res.moveToFirst();
-            exceptionsArray[0] = (res.getString(0));
-            exceptionsArray[1] = (res.getString(1));
-            exceptionsArray[2] = (res.getString(2));
-            exceptionsArray[3] = (res.getString(3));
-            exceptionsArray[4] = (res.getString(4));
-            exceptionsArray[5] = (res.getString(5));
+            exceptionsArray[0] = (res.getString(3));
+            exceptionsArray[1] = (res.getString(4));
+            exceptionsArray[2] = (res.getString(5));
 
             return exceptionsArray;
 
@@ -154,9 +151,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             //SQL query, gets all info where the fish name is the name passed into the function
             Cursor res = db.rawQuery("SELECT NAME FROM " + FISH_REGULATIONS_TABLE + " WHERE REGION = '" + region + "'" , null);
-
-            /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
-            through all the rows */
 
             res.moveToFirst();
             while (!res.isAfterLast()) {
@@ -179,9 +173,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             //SQL query, gets all info where the fish name is the name passed into the function
             Cursor res = db.rawQuery("SELECT LAKE FROM " + FISH_EXCEPTIONS_TABLE + " WHERE REGION = '" + region + "' AND NAME = '" + name + "'" , null);
-
-            /*Since only one column is read (IN THIS CASE), we do not need a while loop to loop
-            through all the rows */
 
             res.moveToFirst();
             while (!res.isAfterLast()) {
