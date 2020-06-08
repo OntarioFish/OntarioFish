@@ -28,6 +28,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     private AutoCompleteTextView lakeList;
     private int regionNumber;
     private String[] fishInfo = new String[2];
+    private String[] lakeException = new String[3];
     private List<String> listLake = new ArrayList<>();
 
     private DatabaseHelper DB;
@@ -80,7 +81,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
                 onSpinnerClick(parent, view, position);
                 break;
             case R.id.lake_list:
-
+                lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
                 break;
         }
 
@@ -99,7 +100,6 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         zoneLimitInfo.setText(fishInfo[1]);
         zoneSeasonInfo.setText(fishInfo[0]);
 
-        
         String resourceName = (String)parent.getItemAtPosition(position);
         resourceName = resourceName.toLowerCase();
         resourceName = resourceName.replaceAll("\\s", "_");
