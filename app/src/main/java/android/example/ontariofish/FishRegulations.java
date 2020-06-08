@@ -99,6 +99,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         zoneLimitInfo.setText(fishInfo[1]);
         zoneSeasonInfo.setText(fishInfo[0]);
 
+        
         String resourceName = (String)parent.getItemAtPosition(position);
         resourceName = resourceName.toLowerCase();
         resourceName = resourceName.replaceAll("\\s", "_");
