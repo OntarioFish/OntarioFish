@@ -16,11 +16,12 @@
         android:fontFamily="@font/nunito"
         android:text="@string/title_main_string"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/view_fish"
@@ -32,12 +33,13 @@
         android:text="@string/view_fish_button"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_title"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.6"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/view_map"
@@ -50,10 +52,11 @@
         android:text="@string/view_map_button"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/view_fish"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"/>
 
 
     <Button
@@ -67,10 +70,11 @@
         android:text="@string/view_regulations_button"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_fish" />
+        app:layout_constraintTop_toBottomOf="@+id/view_fish"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/divider1"
