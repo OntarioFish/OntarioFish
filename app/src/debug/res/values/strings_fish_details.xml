@@ -188,7 +188,7 @@
                                         crevices where they will remain for four to five months before hatching.</string>
 
     <!--Input data for Sauger-->
-    <string name="sauger_overview">The sauger is a freshwater perciform fish that is resembles its close relative the walleye.</string>
+    <string name="sauger_overview">The Sauger is a freshwater perciform fish that is resembles its close relative the walleye.</string>
     <string name="sauger_appearance"><b>-</b>Large, elongated body.
                                      \n\n<b>-</b>Grey to brown back with 3-4 darker brown saddles.
                                      \n\n<b>-</b>Lacks the Walleye\'s white tip on lower tail fin.
@@ -200,4 +200,17 @@
                                \n\n<b>-</b>Weight: 0.2-0.9 kilograms (0.5-2 pounds)
                                \n\n<b>-</b>Ontario record: 2.0 kilograms (4.4 pounds)</string>
     <string name="sauger_habitat">Sauger enjoys similar habitats to its cousin, the walleye. Their habitats include: murky lakes and large rivers, soft mud bottoms to flooded timber, rubble or bedrock.</string>
+
+    <!--Input data for Lake Whitefish-->
+    <string name="lake_whitefish_overview">The Lake Whitefish is one the most abundant and important commercial freshwater species found in Canada.</string>
+    <string name="lake_whitefish_appearance"><b>-</b>Greenish-brown back.
+                                             \n\n<b>-</b>Silvery Sides.
+                                             \n\n<b>-</b>Silvery-white belly.
+                                             \n\n<b>-</b>Snout overhangs mouth.
+                                             \n\n<b>-</b>Deeply forked tail.</string>
+    <string name="lake_whitefish_size"><b>-</b>Length: 30-65 centimetres (12-26 inches)
+                                       \n\n<b>-</b>Weight: 0.9-1.8 kilograms (2-4 pounds)
+                                       \n\n<b>-</b>Ontario record: 6.7 kilograms (14.8 pounds)</string>
+    <string name="lake_whitefish_habitat">Lake Whitefish prefer deep sections of deep lakes and shallow sections if Far North Lakes. During the heat of the summer, whitefish will seek deeper, cooler waters.
+                                          \n\nSpawning typically occurs in November or December in depths no greater then 25 feet. Lake Whitefish will typically spawn on rocky bottoms or shoals.</string>
 </resources>
