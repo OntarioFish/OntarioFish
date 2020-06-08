@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private VideoView mVideoView;
+
     private Button mFishInfoButton, mViewRegsButton,mMapsButton;
 
     public List<RegulationSample> regulationSamples= new ArrayList<>();
@@ -37,18 +38,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //Database object is initialized - see DatabaseHelper class for functions
         MyDb = new DatabaseHelper(this);
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
-        mVideoView = (VideoView) findViewById(R.id.background_video);
         mViewRegsButton = (Button) findViewById(R.id.regulations_button);
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
-        Uri uri = Uri.parse("android.resource://"+ getPackageName() + "/" + R.raw.output);
-        mVideoView.setVideoURI(uri);
 
         /* Creates a test Array to see if the database has already been created,
          in order to avoid needless processing */
@@ -62,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
             readDataFishExceptions();
         }
 
-        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-                mp.setVolume(0,0);
-            }
-        });
 
         mFishInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,15 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
             }
         });
-
-
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mVideoView.start();
-    }
 
     /* Function reads lines of data from speciesregulations.txt, which can be found in the "raw" folder
     under the resource files folder */
@@ -179,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
             MyDb.insertDataFishExceptions(currentRegion, currentName, currentLake, currentInfo, currentSeason, currentLimits);
         }
+
     }
 
 }

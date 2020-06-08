@@ -28,8 +28,6 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_info);
 
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -90,8 +88,6 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
 
     @Override
     public void onCardClick(int position) {
-        Log.d("What up gthang", "onCardClick: clicked.");
-        System.out.println(fishList.get(position).getName());
         Intent intent = new Intent(FishInfo.this, FishDetails.class);
         intent.putExtra("FISHES", fishList.get(position));
         startActivity(intent);

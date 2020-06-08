@@ -3,16 +3,16 @@ package android.example.ontariofish;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
@@ -23,6 +23,8 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
     private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo;
     private Spinner fishSelect;
+    private Fish currentFish;
+    private FloatingActionButton fabFish;
     private AutoCompleteTextView lakeList;
     private int regionNumber;
     private String[] fishInfo = new String[2];
@@ -49,15 +51,70 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
         zoneLimitInfo = (TextView)findViewById(R.id.zone_limit);
         zoneSeasonInfo = (TextView)findViewById(R.id.zone_season);
+        fabFish = (FloatingActionButton) findViewById(R.id.fab_fish_info);
         regulationFish = setTitle(zoneName);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, regulationFish);
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fishSelect.setAdapter(adapter);
         fishSelect.setOnItemSelectedListener(this);
+        lakeList.setThreshold(1);
 
+        fabFish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("FAB clicked");
+                System.out.println(currentFish.getResourceName());
+                Intent intent = new Intent(FishRegulations.this, FishDetails.class);
+                intent.putExtra("FISHES", currentFish);
+                startActivity(intent);
+            }
+        });
+    }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        switch (parent.getId()){
+            case R.id.fish_spinner:
+                onSpinnerClick(parent, view, position);
+                break;
+            case R.id.lake_list:
+
+                break;
+        }
+
+        //first position is the season, second position is the limits
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    //Handles actions in the even a fish is selected from the dropdown.
+    public void onSpinnerClick(AdapterView<?> parent, View view, int position){
+        fishInfo = DB.getRegulationsInfo(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
+        zoneLimitInfo.setText(fishInfo[1]);
+        zoneSeasonInfo.setText(fishInfo[0]);
+
+        String resourceName = (String)parent.getItemAtPosition(position);
+        resourceName = resourceName.toLowerCase();
+        resourceName = resourceName.replaceAll("\\s", "_");
+        currentFish = new Fish((String)parent.getItemAtPosition(position), 0, resourceName);
+        System.out.println(currentFish.getResourceName());
+        listLake = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
+        lakeList.getText().clear();
+
+        if(listLake.isEmpty()){
+            lakeList.setVisibility(View.INVISIBLE);
+        } else {
+            if(lakeList.getVisibility() == View.INVISIBLE)
+                lakeList.setVisibility(View.VISIBLE);
+            ArrayAdapter<String> lake = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, listLake);
+            lakeList.setAdapter(lake);
+        }
     }
 
     public List<String> setTitle(String zoneName){
@@ -169,19 +226,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         return regulationFishTemp;
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(FishRegulations.this, (String)parent.getItemAtPosition(position), Toast.LENGTH_LONG).show();
 
-        //first position is the season, second position is the limits
-        fishInfo = DB.getRegulationsInfo(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
-        listLake = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
-        zoneLimitInfo.setText(fishInfo[1]);
-        zoneSeasonInfo.setText(fishInfo[0]);
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
 }

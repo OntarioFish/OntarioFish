@@ -4,77 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <VideoView
-        android:id="@+id/background_video"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/main_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/bigshot_one"
+        android:fontFamily="@font/nunito"
         android:text="@string/title_main_string"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="24sp"
+        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/view_fish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_rounded"
-        android:fontFamily="@font/bigshot_one"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/nunito"
         android:paddingHorizontal="30dp"
         android:text="@string/view_fish_button"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_title"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.6"
+        android:textStyle="bold"/>
+
     <Button
         android:id="@+id/view_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_rounded"
         android:layout_margin="16dp"
-        android:fontFamily="@font/bigshot_one"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/nunito"
         android:paddingHorizontal="30dp"
         android:text="@string/view_map_button"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/view_fish"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"/>
 
 
     <Button
         android:id="@+id/regulations_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_rounded"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/bigshot_one"
-        android:text="@string/view_regulations_button"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/nunito"
         android:paddingHorizontal="30dp"
+        android:text="@string/view_regulations_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_fish"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/divider1"
+        android:layout_width="93dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="159dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@+id/view_fish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_map" />
+
+    <Button
+        android:id="@+id/divider2"
+        android:layout_width="93dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="1dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@+id/regulations_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_fish" />

@@ -25,8 +25,6 @@ public class FishDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_details);
 
-        Window window = getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
         overview = (TextView) findViewById(R.id.fish_overview);
         title = (TextView) findViewById(R.id.title_main);
