@@ -3,15 +3,21 @@ package android.example.ontariofish;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
@@ -19,9 +25,10 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
-    private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo;
+    private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo, exceptionInfo,exceptionLocation;
+    private LinearLayout exceptionLayout;
     private Spinner fishSelect;
     private Fish currentFish;
     private FloatingActionButton fabFish;
@@ -44,23 +51,27 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         Window window = getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
+        Toast.makeText(this, "Select a fish from dropdown menu!", Toast.LENGTH_SHORT).show();
 
         Bundle extras = getIntent().getExtras();
         String zoneName = extras.getString("ZONE");
+        exceptionLocation = (TextView) findViewById(R.id.exception_location);
+        exceptionLayout = (LinearLayout) findViewById(R.id.exception_layout);
         lakeList = (AutoCompleteTextView) findViewById(R.id.lake_list);
         zoneTitle = (TextView)findViewById(R.id.zone_title);
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
         zoneLimitInfo = (TextView)findViewById(R.id.zone_limit);
         zoneSeasonInfo = (TextView)findViewById(R.id.zone_season);
         fabFish = (FloatingActionButton) findViewById(R.id.fab_fish_info);
+        exceptionInfo = (TextView) findViewById(R.id.exception_info);
         regulationFish = setTitle(zoneName);
-
+        exceptionLayout.setVisibility(View.INVISIBLE);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, regulationFish);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fishSelect.setAdapter(adapter);
         fishSelect.setOnItemSelectedListener(this);
         lakeList.setThreshold(1);
-
+        lakeList.setOnItemClickListener(this);
         fabFish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,21 +84,32 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         });
     }
 
+
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        System.out.println("HELLo");
+        lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
+        exceptionLocation.setText(String.format("%s: %s", parent.getItemAtPosition(position), lakeException[0]));
+        if(lakeException[2].equals("Unchanged")){
+            exceptionInfo.setText(String.format("%s\n\n", lakeException[1]));
+        } else {
+            exceptionInfo.setText(String.format("%s\n\n%s", lakeException[1], lakeException[2]));
+        }
+
+        exceptionLayout.setVisibility(View.VISIBLE);
+
+        closeKeyboard();
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-        switch (parent.getId()){
-            case R.id.fish_spinner:
                 onSpinnerClick(parent, view, position);
-                break;
-            case R.id.lake_list:
-                lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
-                break;
         }
 
         //first position is the season, second position is the limits
 
-    }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
@@ -108,13 +130,25 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         listLake = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
         lakeList.getText().clear();
 
+
+
         if(listLake.isEmpty()){
             lakeList.setVisibility(View.INVISIBLE);
+            exceptionLayout.setVisibility(View.INVISIBLE);
         } else {
             if(lakeList.getVisibility() == View.INVISIBLE)
                 lakeList.setVisibility(View.VISIBLE);
+
             ArrayAdapter<String> lake = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, listLake);
             lakeList.setAdapter(lake);
+        }
+    }
+
+    public void closeKeyboard(){
+        View view = this.getCurrentFocus();
+        if (view != null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
 
@@ -226,8 +260,6 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         return regulationFishTemp;
     }
-
-
 
 
 }

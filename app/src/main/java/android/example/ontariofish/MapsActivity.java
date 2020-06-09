@@ -64,7 +64,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         work.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
             @Override
             public void onFeatureClick(Feature feature) {
-                Toast.makeText(MapsActivity.this,  feature.getId(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
                 intent.putExtra("ZONE", feature.getId());
                 startActivity(intent);

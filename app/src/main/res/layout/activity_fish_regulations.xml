@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundUsed"
-    tools:context=".FishRegulations"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".FishRegulations">
 
     <TextView
         android:id="@+id/zone_title"
@@ -23,62 +23,111 @@
         android:id="@+id/fish_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/zone_season_heading"
         android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:text="@string/zone_season_heading"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_margin="16dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/zone_season"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:layout_margin="16dp"/>
+        android:textSize="14sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/zone_limit_heading"
         android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:text="@string/zone_limit_heading"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_margin="16dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/zone_limit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:layout_margin="16dp"/>
+        android:textSize="14sp" />
 
-    <AutoCompleteTextView
-        android:id="@+id/lake_list"
+        <AutoCompleteTextView
+            android:id="@+id/lake_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/exception_hint" />
+
+    <LinearLayout
+        android:id="@+id/exception_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/exception_hint"
-        android:layout_margin="16dp"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/exception_location_header"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/exception_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/exception_header"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/exception_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <RelativeLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_fish_info"
-            android:layout_height="56dp"
             android:layout_width="56dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="56dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
-            android:src="@drawable/fab_icon"
-            android:backgroundTint="@color/statusBarColor"/>
+            android:backgroundTint="@color/statusBarColor"
+            android:src="@drawable/fab_icon" />
 
     </RelativeLayout>
 
