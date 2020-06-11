@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ import java.util.List;
 public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo, exceptionInfo,exceptionLocation;
-    private LinearLayout exceptionLayout;
+    private ScrollView exceptionLayout;
     private Spinner fishSelect;
     private Fish currentFish;
     private FloatingActionButton fabFish;
@@ -56,7 +57,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         Bundle extras = getIntent().getExtras();
         String zoneName = extras.getString("ZONE");
         exceptionLocation = (TextView) findViewById(R.id.exception_location);
-        exceptionLayout = (LinearLayout) findViewById(R.id.exception_layout);
+        exceptionLayout = (ScrollView) findViewById(R.id.scroll_exception);
         lakeList = (AutoCompleteTextView) findViewById(R.id.lake_list);
         zoneTitle = (TextView)findViewById(R.id.zone_title);
         fishSelect = (Spinner)findViewById(R.id.fish_spinner);
@@ -92,7 +93,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
         exceptionLocation.setText(String.format("%s: %s", parent.getItemAtPosition(position), lakeException[0]));
         if(lakeException[2].equals("Unchanged")){
-            exceptionInfo.setText(String.format("%s\n\n", lakeException[1]));
+            exceptionInfo.setText(String.format("%s", lakeException[1]));
         } else {
             exceptionInfo.setText(String.format("%s\n\n%s", lakeException[1], lakeException[2]));
         }
@@ -129,7 +130,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         System.out.println(currentFish.getResourceName());
         listLake = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
         lakeList.getText().clear();
-
+        exceptionLayout.setVisibility(View.INVISIBLE);
 
 
         if(listLake.isEmpty()){
