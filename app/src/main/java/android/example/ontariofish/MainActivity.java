@@ -25,7 +25,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button mFishInfoButton, mViewRegsButton,mMapsButton;
+    private Button mFishInfoButton, mViewRegsButton ,mMapsButton, mLogbookButton;
 
     public List<RegulationSample> regulationSamples= new ArrayList<>();
     public List<ExceptionSample> exceptionSamples= new ArrayList<>();
@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
-        mViewRegsButton = (Button) findViewById(R.id.regulations_button);
+        mViewRegsButton = (Button)findViewById(R.id.regulations_button);
+        mLogbookButton = (Button)findViewById(R.id.logbook_button);
 
 
         /* Creates a test Array to see if the database has already been created,
@@ -77,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
+            }
+        });
+
+        mLogbookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Logbook.class));
             }
         });
     }

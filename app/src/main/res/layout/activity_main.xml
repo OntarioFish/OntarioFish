@@ -71,10 +71,28 @@
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_fish"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/view_fish" />
+
+    <Button
+        android:id="@+id/logbook_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="127dp"
+        android:layout_marginEnd="127dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/nunito"
+        android:paddingHorizontal="30dp"
+        android:text="@string/logbook"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
     <Button
         android:id="@+id/divider1"
@@ -99,7 +117,23 @@
         android:clickable="false"
         app:layout_constraintBottom_toTopOf="@+id/regulations_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_fish" />
+        app:layout_constraintTop_toBottomOf="@+id/view_fish"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/divider3"
+        android:layout_width="93dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="159dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regulations_button"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
