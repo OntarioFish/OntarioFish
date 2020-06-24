@@ -45,42 +45,43 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
 
 
     private void prepareFish(){
-        int[] fish = new int[]{R.drawable.northern_pike, R.drawable.largemouth_bass, R.drawable.walleye, R.drawable.muskellunge, R.drawable.rock_bass2, R.drawable.yellow_perch,
-                               R.drawable.white_crappie, R.drawable.common_carp, R.drawable.channel_catfish, R.drawable.smallmouth_bass, R.drawable.brook_trout, R.drawable.rainbow_trout,
-                               R.drawable.pumpkinseed, R.drawable.lake_trout, R.drawable.sauger};
+
+        int[] fish = new int[]{R.drawable.brook_trout, R.drawable.channel_catfish, R.drawable.common_carp, R.drawable.lake_trout, R.drawable.largemouth_bass, R.drawable.muskellunge,
+                R.drawable.northern_pike, R.drawable.pumpkinseed, R.drawable.rainbow_trout, R.drawable.rock_bass2, R.drawable.sauger, R.drawable.smallmouth_bass,
+                R.drawable.walleye, R.drawable.white_crappie, R.drawable.yellow_perch};
 
         //Section definitely needs improvement in making adding and removing fish easier.
-        Fish northernPike = new Fish("Northern Pike", fish[0], "northern_pike");
-        Fish largeMouthBass = new Fish("Largemouth Bass", fish[1], "largemouth_bass");
-        Fish walleye = new Fish("Walleye", fish[2], "walleye");
-        Fish muskellunge = new Fish("Muskellunge", fish[3], "muskellunge");
-        Fish rockBass = new Fish("Rock Bass", fish[4], "rock_bass");
-        Fish yellowPerch = new Fish("Yellow Perch", fish[5], "yellow_perch");
-        Fish whiteCrappie = new Fish("White Crappie", fish[6], "white_crappie");
-        Fish carp = new Fish("Common Carp", fish[7], "common_carp");
-        Fish catFish = new Fish("Channel Catfish", fish[8], "channel_catfish");
-        Fish atlanticSalmon = new Fish("Smallmouth Bass",  fish[9], "smallmouth_bass");
         Fish brookTrout = new Fish("Brook Trout",  fish[10], "brook_trout");
-        Fish rainbowTrout = new Fish("Rainbow Trout",  fish[11], "rainbow_trout");
-        Fish pumpkinseed = new Fish("Pumpkinseed", fish[12], "pumpkinseed");
+        Fish catFish = new Fish("Channel Catfish", fish[8], "channel_catfish");
+        Fish carp = new Fish("Common Carp", fish[7], "common_carp");
         Fish lakeTrout = new Fish("Lake Trout", fish[13], "lake_trout");
+        Fish largeMouthBass = new Fish("Largemouth Bass", fish[1], "largemouth_bass");
+        Fish muskellunge = new Fish("Muskellunge", fish[3], "muskellunge");
+        Fish northernPike = new Fish("Northern Pike", fish[0], "northern_pike");
+        Fish pumpkinseed = new Fish("Pumpkinseed", fish[12], "pumpkinseed");
+        Fish rainbowTrout = new Fish("Rainbow Trout",  fish[11], "rainbow_trout");
+        Fish rockBass = new Fish("Rock Bass", fish[4], "rock_bass");
         Fish sauger = new Fish("Sauger", fish[14], "sauger");
+        Fish atlanticSalmon = new Fish("Smallmouth Bass",  fish[9], "smallmouth_bass");
+        Fish walleye = new Fish("Walleye", fish[2], "walleye");
+        Fish whiteCrappie = new Fish("White Crappie", fish[6], "white_crappie");
+        Fish yellowPerch = new Fish("Yellow Perch", fish[5], "yellow_perch");
 
-        fishList.add(northernPike);
-        fishList.add(largeMouthBass);
-        fishList.add(walleye);
-        fishList.add(muskellunge);
-        fishList.add(rockBass);
-        fishList.add(yellowPerch);
-        fishList.add(whiteCrappie);
-        fishList.add(carp);
-        fishList.add(catFish);
-        fishList.add(atlanticSalmon);
         fishList.add(brookTrout);
-        fishList.add(rainbowTrout);
-        fishList.add(pumpkinseed);
+        fishList.add(catFish);
+        fishList.add(carp);
         fishList.add(lakeTrout);
+        fishList.add(largeMouthBass);
+        fishList.add(muskellunge);
+        fishList.add(northernPike);
+        fishList.add(pumpkinseed);
+        fishList.add(rainbowTrout);
+        fishList.add(rockBass);
         fishList.add(sauger);
+        fishList.add(atlanticSalmon);
+        fishList.add(walleye);
+        fishList.add(whiteCrappie);
+        fishList.add(yellowPerch);
 
         mAdapter.notifyDataSetChanged();
 
