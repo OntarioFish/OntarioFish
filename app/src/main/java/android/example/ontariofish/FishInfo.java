@@ -51,21 +51,21 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
                 R.drawable.walleye, R.drawable.white_crappie, R.drawable.yellow_perch};
 
         //Section definitely needs improvement in making adding and removing fish easier.
-        Fish brookTrout = new Fish("Brook Trout",  fish[10], "brook_trout");
-        Fish catFish = new Fish("Channel Catfish", fish[8], "channel_catfish");
-        Fish carp = new Fish("Common Carp", fish[7], "common_carp");
-        Fish lakeTrout = new Fish("Lake Trout", fish[13], "lake_trout");
-        Fish largeMouthBass = new Fish("Largemouth Bass", fish[1], "largemouth_bass");
-        Fish muskellunge = new Fish("Muskellunge", fish[3], "muskellunge");
-        Fish northernPike = new Fish("Northern Pike", fish[0], "northern_pike");
-        Fish pumpkinseed = new Fish("Pumpkinseed", fish[12], "pumpkinseed");
-        Fish rainbowTrout = new Fish("Rainbow Trout",  fish[11], "rainbow_trout");
-        Fish rockBass = new Fish("Rock Bass", fish[4], "rock_bass");
-        Fish sauger = new Fish("Sauger", fish[14], "sauger");
-        Fish atlanticSalmon = new Fish("Smallmouth Bass",  fish[9], "smallmouth_bass");
-        Fish walleye = new Fish("Walleye", fish[2], "walleye");
-        Fish whiteCrappie = new Fish("White Crappie", fish[6], "white_crappie");
-        Fish yellowPerch = new Fish("Yellow Perch", fish[5], "yellow_perch");
+        Fish brookTrout = new Fish("Brook Trout",  fish[0], "brook_trout");
+        Fish catFish = new Fish("Channel Catfish", fish[1], "channel_catfish");
+        Fish carp = new Fish("Common Carp", fish[2], "common_carp");
+        Fish lakeTrout = new Fish("Lake Trout", fish[3], "lake_trout");
+        Fish largeMouthBass = new Fish("Largemouth Bass", fish[4], "largemouth_bass");
+        Fish muskellunge = new Fish("Muskellunge", fish[5], "muskellunge");
+        Fish northernPike = new Fish("Northern Pike", fish[6], "northern_pike");
+        Fish pumpkinseed = new Fish("Pumpkinseed", fish[7], "pumpkinseed");
+        Fish rainbowTrout = new Fish("Rainbow Trout",  fish[8], "rainbow_trout");
+        Fish rockBass = new Fish("Rock Bass", fish[9], "rock_bass");
+        Fish sauger = new Fish("Sauger", fish[10], "sauger");
+        Fish atlanticSalmon = new Fish("Smallmouth Bass",  fish[11], "smallmouth_bass");
+        Fish walleye = new Fish("Walleye", fish[12], "walleye");
+        Fish whiteCrappie = new Fish("White Crappie", fish[13], "white_crappie");
+        Fish yellowPerch = new Fish("Yellow Perch", fish[14], "yellow_perch");
 
         fishList.add(brookTrout);
         fishList.add(catFish);
