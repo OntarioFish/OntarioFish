@@ -1,7 +1,7 @@
 # OntarioFish
 The Ontario fishing app.
 The one-stop shop for all your fishing needs (if you live in Ontario). 
-Hopefully the information on regulations contained in one conveinent app!
+Hopefully the information on regulations contained in one convenient app!
 
 Contributors:  
 ## Currently Unemployed Cameron Landry  - Head of the marketing division. <--- HONESTLY HE IS KIND OF AN IDIOT LOL "MARKETING DIVISION" WTF IS THAT 

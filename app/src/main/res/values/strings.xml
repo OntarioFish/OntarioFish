@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">OntarioFish</string>
     <string name="title_main_string">Ontario Fishing</string>
-    <string name="view_fish_button">View Fish</string>
+    <string name="view_fish_button">Fish</string>
     <string name="record_size_card">Record: %1$s</string>
     <string name="details_heading_one">Appearance</string>
     <string name="details_heading_two">Size</string>
     <string name="details_heading_three">Habitat and Range</string>
-    <string name="view_regulations_button">View Regulations</string>
+    <string name="view_regulations_button">Regulations</string>
     <string name="select_zone_text">Select your zone:</string>
     <string name="title_activity_maps">Map</string>
-    <string name="view_map_button">View Map</string>
+    <string name="view_map_button">Map</string>
     <string name="title_activity_maps2">Map</string>
     <string name="zone_limit_heading">Limits</string>
     <string name="zone_season_heading">Season</string>
