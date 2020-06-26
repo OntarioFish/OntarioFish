@@ -74,14 +74,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         uiSettings.setZoomControlsEnabled(true);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Ontario));
         mMap.setMinZoomPreference(5);
-
-
     }
 
     public KmlLayer addLayer(int resourceId){
 
         try {
             return new KmlLayer(mMap, resourceId, this);
+
         } catch (IOException | XmlPullParserException e) {
             e.printStackTrace();
         }
