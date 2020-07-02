@@ -8,14 +8,14 @@ import android.os.Handler;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIMEOUT = 3000;
-
+    private static int SPLASH_TIMEOUT = 500;
+    private Handler mainHandler= new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        new Handler().postDelayed(new Runnable() {
+        mainHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent homeIntent = new Intent(HomeActivity.this, MainActivity.class);

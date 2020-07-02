@@ -22,13 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mFishInfoButton, mViewRegsButton ,mMapsButton, mLogbookButton;
 
-    public List<RegulationSample> regulationSamples= new ArrayList<>();
-    public List<ExceptionSample> exceptionSamples= new ArrayList<>();
+    private List<RegulationSample> regulationSamples= new ArrayList<>();
+    private List<ExceptionSample> exceptionSamples= new ArrayList<>();
 
     DatabaseHelper MyDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -76,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         mMapsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                Intent mapStart = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(mapStart);
             }
         });
 
