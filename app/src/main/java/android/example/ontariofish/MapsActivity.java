@@ -1,9 +1,17 @@
 package android.example.ontariofish;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,7 +31,9 @@ import java.io.IOException;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private Button help;
+    private Handler mapHandler = new Handler();
+    private KmlLayer zones;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +43,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        Window window = getWindow();
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.statusBarColor));
 
+        help = (Button)findViewById(R.id.help_button_maps);
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder help = new AlertDialog.Builder(MapsActivity.this);
+                help.setTitle("Map Help");
+                help.setMessage(R.string.map_alert_dialog);
+                help.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                help.show();
+            }
+        });
     }
     // bounds of the desired area
 
@@ -48,32 +76,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+
+        MapRunnable runnable = new MapRunnable();
+        runnable.run();
 
         LatLng Ontario = new LatLng(51.833568, -86.997632);
         LatLng Southwest = new LatLng(41.721325, -95.150434);
         LatLng NorthEast = new LatLng(57.910221, -74.343067);
         LatLngBounds OntarioRestrict = new LatLngBounds(Southwest, NorthEast);
 
-
-        KmlLayer work = addLayer(R.raw.fish_zones);
-
-        work.addLayerToMap();
-
+//        long startTime1 = System.currentTimeMillis();
+////        KmlLayer work = addLayer(R.raw.fish_zones);
+//        long stopTime1 = System.currentTimeMillis();
+//        System.out.println("Start1:" + startTime1 + "  Stop1:" + stopTime1);
+//
+//        long startTime = System.currentTimeMillis();
+////        work.addLayerToMap();
+//        long stopTime = System.currentTimeMillis();
+//        System.out.println("Start2:" + startTime + "  Stop2:" + stopTime);
         mMap.setLatLngBoundsForCameraTarget(OntarioRestrict);
-        work.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
-            @Override
-            public void onFeatureClick(Feature feature) {
-                Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
-                intent.putExtra("ZONE", feature.getId());
-                startActivity(intent);
-            }
-        });
+
 
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Ontario));
         mMap.setMinZoomPreference(5);
+
+
     }
 
     public KmlLayer addLayer(int resourceId){
@@ -87,6 +118,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         return null;
     }
+
+    class MapRunnable implements Runnable{
+
+        @Override
+        public void run() {
+            zones= addLayer(R.raw.fish_zones);
+            mapHandler.post(new Runnable(){
+                @Override
+                public void run(){
+                    zones.addLayerToMap();
+                    zones.setOnFeatureClickListener(new KmlLayer.OnFeatureClickListener() {
+                        @Override
+                        public void onFeatureClick(Feature feature) {
+                            Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
+                            intent.putExtra("ZONE", feature.getId());
+                            startActivity(intent);
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+
 
 
 }
