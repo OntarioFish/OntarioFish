@@ -18,5 +18,7 @@
     <string name="exception_header">Exception Changes</string>
     <string name="exception_location_header">Location</string>
     <string name="exception_location_info">%s: %s</string>
+    <string name="map_toolbar_title">Map</string>
+    <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!</string>
 
 </resources>
