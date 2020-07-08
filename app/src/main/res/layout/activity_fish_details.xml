@@ -5,22 +5,28 @@
     android:layout_height="match_parent"
     tools:context=".FishDetails">
 
-    <TextView
-        android:id="@+id/title_main"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/details_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:backgroundTint="@color/statusBarColor"
-        android:fontFamily="@font/nunito"
-        android:gravity="center"
-        android:padding="8dp"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/white" />
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/title_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/title_main"
+        android:layout_below="@id/details_toolbar"
         android:background="@color/backgroundUsed">
 
         <LinearLayout

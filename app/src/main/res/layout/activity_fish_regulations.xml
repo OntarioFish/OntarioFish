@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/regulations_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -21,10 +21,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito"
-            android:layout_gravity="center"
+            android:layout_gravity="start"
             android:padding="8dp"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/help_button_regulation"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/help_icon"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,16 +43,16 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/statusBarColor"
-        android:src="@drawable/fab_icon"
-        android:scaleType="fitCenter" />
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/fish_icon_white"
+        android:scaleType="fitXY" />
 
     <LinearLayout
         android:id="@+id/main_zone_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/my_toolbar">
+        android:layout_below="@id/regulations_toolbar">
 
         <Spinner
             android:id="@+id/fish_spinner"

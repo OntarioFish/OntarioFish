@@ -20,5 +20,8 @@
     <string name="exception_location_info">%s: %s</string>
     <string name="map_toolbar_title">Map</string>
     <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!</string>
+    <string name="regulation_alert_dialog">Select a fish from the drop down menu at the top of the screen. Displayed below will be the season and limits. \'S\' stands for sport license and \'C\' stands for conservation.
+                                           \n\nIf available, enter your lake in the text box to see if there are any exceptions for the lake!</string>
+    <string name="fish_info_title">Fish</string>
 
 </resources>

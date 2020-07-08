@@ -1,7 +1,10 @@
 package android.example.ontariofish;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,19 +12,28 @@ import com.bumptech.glide.Glide;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardListener {
+public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishListener {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private List<Fish> fishList;
+    private FishAdapter adapter;
+    private ArrayList<Fish> fishList;
     private RecyclerView.LayoutManager layoutManager;
+    private EditText editText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,43 +41,64 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
         setContentView(R.layout.activity_fish_info);
 
 
+
+//        toolbar = findViewById(R.id.info_toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        editText = (EditText) findViewById(R.id.search_fish);
+
+
 
         fishList = new ArrayList<>(39);
-        mAdapter = new FishAdapter(this, fishList, this);
-
+        adapter = new FishAdapter(fishList, this);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new GridLayoutManager(this, 2);
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(mAdapter);
-
+        recyclerView.setAdapter(adapter);
+        DividerItemDecoration decoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(decoration);
         prepareFish();
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                adapter.filterList(s.toString());
+            }
+        });
+
 
     }
 
 
+
     private void prepareFish(){
 
-        int[] fish = new int[]{R.drawable.brook_trout, R.drawable.channel_catfish, R.drawable.common_carp, R.drawable.lake_trout, R.drawable.largemouth_bass, R.drawable.muskellunge,
-                R.drawable.northern_pike, R.drawable.pumpkinseed, R.drawable.rainbow_trout, R.drawable.rock_bass2, R.drawable.sauger, R.drawable.smallmouth_bass,
-                R.drawable.walleye, R.drawable.white_crappie, R.drawable.yellow_perch};
 
         //Section definitely needs improvement in making adding and removing fish easier.
-        Fish brookTrout = new Fish("Brook Trout",  fish[0], "brook_trout");
-        Fish catFish = new Fish("Channel Catfish", fish[1], "channel_catfish");
-        Fish carp = new Fish("Common Carp", fish[2], "common_carp");
-        Fish lakeTrout = new Fish("Lake Trout", fish[3], "lake_trout");
-        Fish largeMouthBass = new Fish("Largemouth Bass", fish[4], "largemouth_bass");
-        Fish muskellunge = new Fish("Muskellunge", fish[5], "muskellunge");
-        Fish northernPike = new Fish("Northern Pike", fish[6], "northern_pike");
-        Fish pumpkinseed = new Fish("Pumpkinseed", fish[7], "pumpkinseed");
-        Fish rainbowTrout = new Fish("Rainbow Trout",  fish[8], "rainbow_trout");
-        Fish rockBass = new Fish("Rock Bass", fish[9], "rock_bass");
-        Fish sauger = new Fish("Sauger", fish[10], "sauger");
-        Fish atlanticSalmon = new Fish("Smallmouth Bass",  fish[11], "smallmouth_bass");
-        Fish walleye = new Fish("Walleye", fish[12], "walleye");
-        Fish whiteCrappie = new Fish("White Crappie", fish[13], "white_crappie");
-        Fish yellowPerch = new Fish("Yellow Perch", fish[14], "yellow_perch");
+        Fish brookTrout = new Fish("Brook Trout", "brook_trout");
+        Fish catFish = new Fish("Channel Catfish", "channel_catfish");
+        Fish carp = new Fish("Common Carp", "common_carp");
+        Fish lakeTrout = new Fish("Lake Trout", "lake_trout");
+        Fish largeMouthBass = new Fish("Largemouth Bass", "largemouth_bass");
+        Fish muskellunge = new Fish("Muskellunge", "muskellunge");
+        Fish northernPike = new Fish("Northern Pike", "northern_pike");
+        Fish pumpkinseed = new Fish("Pumpkinseed", "pumpkinseed");
+        Fish rainbowTrout = new Fish("Rainbow Trout",  "rainbow_trout");
+        Fish rockBass = new Fish("Rock Bass", "rock_bass");
+        Fish sauger = new Fish("Sauger", "sauger");
+        Fish atlanticSalmon = new Fish("Smallmouth Bass",  "smallmouth_bass");
+        Fish walleye = new Fish("Walleye", "walleye");
+        Fish whiteCrappie = new Fish("White Crappie", "white_crappie");
+        Fish yellowPerch = new Fish("Yellow Perch", "yellow_perch");
 
         fishList.add(brookTrout);
         fishList.add(catFish);
@@ -83,13 +116,13 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnCardLis
         fishList.add(whiteCrappie);
         fishList.add(yellowPerch);
 
-        mAdapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
 
     }
 
     @Override
-    public void onCardClick(int position) {
-        Intent intent = new Intent(FishInfo.this, FishDetails.class);
+    public void onFishClick(int position) {
+        Intent intent = new Intent(this, FishDetails.class);
         intent.putExtra("FISHES", fishList.get(position));
         startActivity(intent);
     }

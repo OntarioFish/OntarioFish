@@ -3,7 +3,9 @@ package android.example.ontariofish;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
@@ -13,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -29,6 +32,7 @@ import java.util.List;
 public class FishRegulations extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo, exceptionInfo,exceptionLocation;
+    private Button helpButton;
     private ScrollView exceptionLayout;
     private Spinner fishSelect;
     private Fish currentFish;
@@ -56,6 +60,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
         Bundle extras = getIntent().getExtras();
         String zoneName = extras.getString("ZONE");
+        helpButton = (Button) findViewById(R.id.help_button_regulation);
         exceptionLocation = (TextView) findViewById(R.id.exception_location);
         exceptionLayout = (ScrollView) findViewById(R.id.scroll_exception);
         lakeList = (AutoCompleteTextView) findViewById(R.id.lake_list);
@@ -83,6 +88,22 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
                 startActivity(intent);
             }
         });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder help = new AlertDialog.Builder(FishRegulations.this);
+                help.setTitle("Regulations Help");
+                help.setMessage(R.string.regulation_alert_dialog);
+                help.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                help.show();
+            }
+        });
+
     }
 
 
@@ -126,7 +147,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         String resourceName = (String)parent.getItemAtPosition(position);
         resourceName = resourceName.toLowerCase();
         resourceName = resourceName.replaceAll("\\s", "_");
-        currentFish = new Fish((String)parent.getItemAtPosition(position), 0, resourceName);
+        currentFish = new Fish((String)parent.getItemAtPosition(position), resourceName);
         System.out.println(currentFish.getResourceName());
         listLake = DB.getExceptionsLake(Integer.toString(regionNumber), (String)parent.getItemAtPosition(position));
         lakeList.getText().clear();
