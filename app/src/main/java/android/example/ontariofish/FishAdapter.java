@@ -17,7 +17,7 @@ import java.util.List;
 
 public class FishAdapter extends RecyclerView.Adapter<FishAdapter.MyViewHolder>{
 
-    private ArrayList<Fish> fishList;
+    private static ArrayList<Fish> fishList;
     private ArrayList<Fish> fishListFull;
     private OnFishListener mOnFishListener;
 
@@ -34,7 +34,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.MyViewHolder>{
 
         @Override
         public void onClick(View v) {
-            onFishListener.onFishClick(getAdapterPosition());
+            onFishListener.onFishClick(fishList.get(getAdapterPosition()));
         }
     }
 
@@ -74,7 +74,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.MyViewHolder>{
     }
 
     public interface OnFishListener{
-        void onFishClick(int position);
+        void onFishClick(Fish fish);
     }
 
 

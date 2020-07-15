@@ -88,6 +88,7 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Fish catFish = new Fish("Channel Catfish", "channel_catfish");
         Fish carp = new Fish("Common Carp", "common_carp");
         Fish lakeTrout = new Fish("Lake Trout", "lake_trout");
+        Fish lakeWhiteFish = new Fish("Lake Whitefish", "lake_whitefish");
         Fish largeMouthBass = new Fish("Largemouth Bass", "largemouth_bass");
         Fish muskellunge = new Fish("Muskellunge", "muskellunge");
         Fish northernPike = new Fish("Northern Pike", "northern_pike");
@@ -100,10 +101,12 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Fish whiteCrappie = new Fish("White Crappie", "white_crappie");
         Fish yellowPerch = new Fish("Yellow Perch", "yellow_perch");
 
+
         fishList.add(brookTrout);
         fishList.add(catFish);
         fishList.add(carp);
         fishList.add(lakeTrout);
+        fishList.add(lakeWhiteFish);
         fishList.add(largeMouthBass);
         fishList.add(muskellunge);
         fishList.add(northernPike);
@@ -120,10 +123,9 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
 
     }
 
-    @Override
-    public void onFishClick(int position) {
+    public void onFishClick(Fish fish) {
         Intent intent = new Intent(this, FishDetails.class);
-        intent.putExtra("FISHES", fishList.get(position));
+        intent.putExtra("FISHES", fish);
         startActivity(intent);
     }
 }
