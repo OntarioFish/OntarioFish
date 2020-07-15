@@ -39,6 +39,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".FishRegulations" />
         <activity android:name=".FishDetails" />
+        <activity android:name=".Logbook" />
+        <activity android:name=".EnterLogEntry"/>
         <activity
             android:name=".FishInfo"
             android:parentActivityName=".MainActivity"
