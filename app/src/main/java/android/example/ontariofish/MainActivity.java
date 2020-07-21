@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         mFishInfoButton = (Button)findViewById(R.id.view_fish);
         mMapsButton = (Button)findViewById(R.id.view_map);
-        mViewRegsButton = (Button)findViewById(R.id.regulations_button);
         mLogbookButton = (Button)findViewById(R.id.logbook_button);
 
 
@@ -69,12 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mViewRegsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FishRegulations.class));
-            }
-        });
+
         mMapsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

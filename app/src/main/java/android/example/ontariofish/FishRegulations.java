@@ -78,14 +78,24 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         fishSelect.setOnItemSelectedListener(this);
         lakeList.setThreshold(1);
         lakeList.setOnItemClickListener(this);
+
         fabFish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("FAB clicked");
-                System.out.println(currentFish.getResourceName());
-                Intent intent = new Intent(FishRegulations.this, FishDetails.class);
-                intent.putExtra("FISHES", currentFish);
-                startActivity(intent);
+                String fishName = currentFish.getResourceName();
+
+                if(fishName.equals("sunfish")){
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "sunfish");
+                    startActivity(intent);
+
+                } else {
+                    System.out.println("FAB clicked");
+                    System.out.println(fishName);
+                    Intent intent = new Intent(FishRegulations.this, FishDetails.class);
+                    intent.putExtra("FISHES", currentFish);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -110,7 +120,6 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        System.out.println("HELLo");
         lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
         exceptionLocation.setText(String.format("%s: %s", parent.getItemAtPosition(position), lakeException[0]));
         if(lakeException[2].equals("Unchanged")){

@@ -7,15 +7,15 @@
     android:background="@color/colorPrimary"
     tools:context=".HomeActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/splashText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="356dp"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="356dp"
-        android:text="Splash Screen Text and Icon"
+        android:background="@drawable/fish_icon_white"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

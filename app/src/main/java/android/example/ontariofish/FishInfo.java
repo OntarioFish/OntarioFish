@@ -56,7 +56,13 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         recyclerView.setAdapter(adapter);
         DividerItemDecoration decoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(decoration);
-        prepareFish();
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            prepareSunFish();
+        } else {
+            prepareFish();
+        }
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -74,19 +80,26 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
                 adapter.filterList(s.toString());
             }
         });
-
-
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        editText.getText().clear();
+    }
 
     private void prepareFish(){
 
 
         //Section definitely needs improvement in making adding and removing fish easier.
+        Fish atlanticSalmon = new Fish("Atlantic Salmon", "atlantic_salmon");
+        Fish blueGill = new Fish("Bluegill", "bluegill");
         Fish brookTrout = new Fish("Brook Trout", "brook_trout");
+        Fish brownTrout = new Fish("Brown Trout", "brown_trout");
         Fish catFish = new Fish("Channel Catfish", "channel_catfish");
         Fish carp = new Fish("Common Carp", "common_carp");
+        Fish lakeSturgeon = new Fish("Lake Sturgeon", "lake_sturgeon");
         Fish lakeTrout = new Fish("Lake Trout", "lake_trout");
         Fish lakeWhiteFish = new Fish("Lake Whitefish", "lake_whitefish");
         Fish largeMouthBass = new Fish("Largemouth Bass", "largemouth_bass");
@@ -96,15 +109,19 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Fish rainbowTrout = new Fish("Rainbow Trout",  "rainbow_trout");
         Fish rockBass = new Fish("Rock Bass", "rock_bass");
         Fish sauger = new Fish("Sauger", "sauger");
-        Fish atlanticSalmon = new Fish("Smallmouth Bass",  "smallmouth_bass");
+        Fish smallmouthBass = new Fish("Smallmouth Bass",  "smallmouth_bass");
+        Fish splake = new Fish("Splake", "splake");
         Fish walleye = new Fish("Walleye", "walleye");
         Fish whiteCrappie = new Fish("White Crappie", "white_crappie");
         Fish yellowPerch = new Fish("Yellow Perch", "yellow_perch");
 
-
+        fishList.add(atlanticSalmon);
+        fishList.add(blueGill);
         fishList.add(brookTrout);
+        fishList.add(brownTrout);
         fishList.add(catFish);
         fishList.add(carp);
+        fishList.add(lakeSturgeon);
         fishList.add(lakeTrout);
         fishList.add(lakeWhiteFish);
         fishList.add(largeMouthBass);
@@ -114,12 +131,21 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         fishList.add(rainbowTrout);
         fishList.add(rockBass);
         fishList.add(sauger);
-        fishList.add(atlanticSalmon);
+        fishList.add(smallmouthBass);
+        fishList.add(splake);
         fishList.add(walleye);
         fishList.add(whiteCrappie);
         fishList.add(yellowPerch);
 
         adapter.notifyDataSetChanged();
+
+    }
+
+    private void prepareSunFish(){
+        Fish pumpkinseed = new Fish("Pumpkinseed", "pumpkinseed");
+        Fish blueGill = new Fish("Bluegill", "bluegill");
+        fishList.add(pumpkinseed);
+        fishList.add(blueGill);
 
     }
 
