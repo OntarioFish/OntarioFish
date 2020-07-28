@@ -279,4 +279,46 @@
     <string name="bluegill_habitat">Bluegills are can be found in many of Ontario southern waters. Their habitat includes warmer lakes and ponds,
                                     slow-moving vegetated streams, and clear waters with some weed growth.</string>
 
+
+    <!--Input data for Coho Salmon-->
+    <string name="coho_salmon_overview">Coho Salmon are a Pacific coast fish that were originally introduced in the later 1870s.</string>
+    <string name="coho_salmon_appearance"><b>-</b>Deeep-bodied but thin from side to side.
+                                          \n\n<b>-</b>Blue or green back.
+                                          \n\n<b>-</b>Silvery sides.
+                                          \n\n<b>-</b>White belly.
+                                          \n\n<b>-</b>Smaller than Chinook salmon.
+                                          \n\n<b>-</b>Dark mouth-light grey gums.</string>
+    <string name="coho_salmon_size"><b>-</b>Length: 30-75 centimetres (12-30 inches)
+                                    \n\n<b>-</b>Weight: 2.25-4.5 kilograms (5-10 pounds)
+                                    \n\n<b>-</b>Ontario record: 13 kilograms (28.6 pounds)</string>
+    <string name="coho_salmon_habitat">Coho Salmon are native to the North Pacific Ocean and have been introduced into the Great Lakes. Coho Salmon spend most of the year in cold waters
+                                       of the Great Lakes but return to tributary streams to spawn.</string>
+
+    <!--Input data for Chinook Salmon-->
+    <string name="chinook_salmon_overview">Chinook Salmon are a Pacific coast fish that were originally introduced in the later 1870s.</string>
+    <string name="chinook_salmon_appearance"><b>-</b>Blue or green back.
+                                             \n\n<b>-</b>Silvery sides.
+                                             \n\n<b>-</b>White belly.
+                                             \n\n<b>-</b>Spotted tail.
+                                             \n\n<b>-</b>Black mouth and gums.
+                                             \n\n<b>-</b>Elongated, moderately deep-bodied fish.</string>
+    <string name="chinook_salmon_size"><b>-</b>Length: 30-100 centimetres (12-39 inches)
+                                       \n\n<b>-</b>Weight: 3.1 -6.8 kilograms (7-15 pounds)
+                                       \n\n<b>-</b>Ontario record: 21 kilograms (46.4 pounds)</string>
+    <string name="chinook_salmon_habitat">Chinook Salmon spend most of the year in the cold waters of the Great Lakes but return to tributary streams to spawn.</string>
+
+
+    <!--Input data for Black Crappie-->
+    <string name="black_crappie_overview">Black Crappie is a recreational fish whose range extends across North America.</string>
+    <string name="black_crappie_appearance"><b>-</b>Small, deep-bodied fish.
+                                            \n\n<b>-</b>Silver with blue or green iridescence and irregular mosaic of distinct black blotches.
+                                            \n\n<b>-</b>7 to 8 dorsal fin spines.
+                                            \n\n<b>-</b>6 to 7 anal fin spines.
+                                            \n\n<b>-</b>Large mouth extends below middle of eye.</string>
+    <string name="black_crappie_size"><b>-</b>Length: 18-25 centimetres (7-10 inches)
+                                      \n\n<b>-</b>Weight: 0.23-0.45 kilograms (0.5-1.0 pounds)
+                                      \n\n<b>-</b>Ontario record: 1.7 kilograms (3.8 pounds)</string>
+    <string name="black_crappie_habitat">Black Crappie can be found throughout southern Ontario, including protected bays of the southern Great Lakes and in northwestern Ontario.
+                                         Black Crappie prefer warm, clear, vegetated lakes, ponds and rivers with littler current.</string>
+
 </resources>

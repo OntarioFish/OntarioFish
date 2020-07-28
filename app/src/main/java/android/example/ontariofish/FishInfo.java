@@ -59,7 +59,17 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            prepareSunFish();
+            switch(extras.getString("SOURCE")){
+                case "sunfish":
+                    prepareSunFish();
+                    break;
+                case "pacific_salmon":
+                    preparePacificSalmon();
+                    break;
+                case "crappie":
+                    prepareCrappie();
+                    break;
+            }
         } else {
             prepareFish();
         }
@@ -94,10 +104,13 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
 
         //Section definitely needs improvement in making adding and removing fish easier.
         Fish atlanticSalmon = new Fish("Atlantic Salmon", "atlantic_salmon");
+        Fish blackCrappie = new Fish("Black Crappie", "black_crappie");
         Fish blueGill = new Fish("Bluegill", "bluegill");
         Fish brookTrout = new Fish("Brook Trout", "brook_trout");
         Fish brownTrout = new Fish("Brown Trout", "brown_trout");
         Fish catFish = new Fish("Channel Catfish", "channel_catfish");
+        Fish chinookSalmon = new Fish("Chinook Salmon", "chinook_salmon");
+        Fish cohoSalmon = new Fish("Coho Salmon", "coho_salmon");
         Fish carp = new Fish("Common Carp", "common_carp");
         Fish lakeSturgeon = new Fish("Lake Sturgeon", "lake_sturgeon");
         Fish lakeTrout = new Fish("Lake Trout", "lake_trout");
@@ -116,10 +129,13 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Fish yellowPerch = new Fish("Yellow Perch", "yellow_perch");
 
         fishList.add(atlanticSalmon);
+        fishList.add(blackCrappie);
         fishList.add(blueGill);
         fishList.add(brookTrout);
         fishList.add(brownTrout);
         fishList.add(catFish);
+        fishList.add(chinookSalmon);
+        fishList.add(cohoSalmon);
         fishList.add(carp);
         fishList.add(lakeSturgeon);
         fishList.add(lakeTrout);
@@ -147,6 +163,22 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         fishList.add(pumpkinseed);
         fishList.add(blueGill);
 
+    }
+
+    private void prepareCrappie(){
+        Fish whiteCrappie = new Fish("White Crappie", "white_crappie");
+        Fish blackCrappie = new Fish("Black Crappie", "black_crappie");
+        fishList.add(blackCrappie);
+        fishList.add(whiteCrappie);
+        adapter.notifyDataSetChanged();
+    }
+
+    private void preparePacificSalmon(){
+        Fish chinookSalmon = new Fish("Chinook Salmon", "chinook_salmon");
+        Fish cohoSalmon = new Fish("Coho Salmon", "coho_salmon");
+
+        fishList.add(chinookSalmon);
+        fishList.add(cohoSalmon);
     }
 
     public void onFishClick(Fish fish) {

@@ -84,9 +84,19 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
             public void onClick(View v) {
                 String fishName = currentFish.getResourceName();
 
-                if(fishName.equals("sunfish")){
+                if(fishName.equals("sunfish")) {
                     Intent intent = new Intent(FishRegulations.this, FishInfo.class);
                     intent.putExtra("SOURCE", "sunfish");
+                    startActivity(intent);
+
+                }else if(fishName.equals("crappie")) {
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "crappie");
+                    startActivity(intent);
+
+                }else if (fishName.equals("pacific_salmon")){
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "pacific_salmon");
                     startActivity(intent);
 
                 } else {
