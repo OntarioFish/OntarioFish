@@ -127,5 +127,13 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Intent intent = new Intent(this, FishDetails.class);
         intent.putExtra("FISHES", fish);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
 }

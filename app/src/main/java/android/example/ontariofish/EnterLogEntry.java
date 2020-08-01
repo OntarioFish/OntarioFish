@@ -57,8 +57,10 @@ public class EnterLogEntry extends AppCompatActivity {
                     line4.getText().clear();
                     line5.getText().clear();
 
-                    Intent intent = new Intent(EnterLogEntry.this, Logbook.class);
-                    startActivity(intent);
+                    Intent i = new Intent(EnterLogEntry.this, Logbook.class);
+                    startActivity(i);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    finish();
                 }
             }
         });
@@ -86,4 +88,11 @@ public class EnterLogEntry extends AppCompatActivity {
         editor.apply();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(EnterLogEntry.this, Logbook.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
 }

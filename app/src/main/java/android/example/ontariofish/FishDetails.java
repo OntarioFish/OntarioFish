@@ -48,6 +48,12 @@ public class FishDetails extends AppCompatActivity {
         fishHabitat.setText(getResourceId("string", "_habitat", fish));
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
     public int getResourceId(String type, String info, Fish fish){
         int id = getResources().getIdentifier(fish.getResourceName() + info, type, getPackageName());
         return id;

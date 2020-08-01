@@ -59,13 +59,17 @@ public class LogbookDialog extends AppCompatDialogFragment {
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //doesnt remove from view
                         mEntryList.remove(position);
                         editor.clear();
                         Gson gson = new Gson();
                         String json = gson.toJson(mEntryList);
                         editor.putString("task list", json);
                         editor.apply();
+
+                        getActivity().finish();
+                        getActivity().overridePendingTransition(0, 0);
+                        startActivity(getActivity().getIntent());
+                        getActivity().overridePendingTransition(0, 0);
                     }
                 })
                 .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {

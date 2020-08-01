@@ -40,6 +40,8 @@ public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolde
             public void onClick(View v) {
                 Intent intent = new Intent(Logbook.this, EnterLogEntry.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
             }
         });
     }
@@ -71,4 +73,11 @@ public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolde
         logbookDialog.show(getSupportFragmentManager(), "logbook dialog");
         logbookDialog.setPosition(position);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
 }
