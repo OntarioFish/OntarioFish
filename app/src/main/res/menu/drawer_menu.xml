@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Menu">
+    <menu>
+        <item android:id="@+id/logbook_menu_item"
+            android:orderInCategory="0"
+            android:title="Logbook"
+            android:icon="@drawable/ic_baseline_menu_book"/>
+        <item android:id="@+id/fish_list_menu_item"
+            android:orderInCategory="0"
+            android:title="Fish List"
+            android:icon="@drawable/fish_icon_white"/>
+    </menu>
+    </item>
+    <item android:title="Favourite Zones">
+        <menu>
+
+        </menu>
+    </item>
+
+</menu>

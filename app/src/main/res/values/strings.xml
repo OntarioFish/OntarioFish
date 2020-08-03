@@ -11,7 +11,6 @@
     <string name="select_zone_text">Select your zone:</string>
     <string name="title_activity_maps">Map</string>
     <string name="view_map_button">Map</string>
-    <string name="title_activity_maps2">Map</string>
     <string name="zone_limit_heading">Limits</string>
     <string name="zone_season_heading">Season</string>
     <string name="exception_hint">Enter lake for potential exceptions</string>
@@ -19,10 +18,21 @@
     <string name="exception_location_header">Location</string>
     <string name="exception_location_info">%s: %s</string>
     <string name="map_toolbar_title">Map</string>
-    <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!</string>
+    <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!\n\n\n<b>Warning:</b> Although zone information is taken from the Government of Ontario the following database data may be out of date. When ensure, check official documents provided by the Government of Ontario.  </string>
     <string name="regulation_alert_dialog">Select a fish from the drop down menu at the top of the screen. Displayed below will be the season and limits. \'S\' stands for sport license and \'C\' stands for conservation.
                                            \n\nIf available, enter your lake in the text box to see if there are any exceptions for the lake!</string>
     <string name="fish_info_title">Fish</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 
     <string name="save_entry">Save</string>
     <string name="location_text_box">Location</string>

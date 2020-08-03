@@ -1,14 +1,18 @@
 package android.example.ontariofish;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
@@ -23,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
 
@@ -33,6 +38,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
 
     private TextView zoneTitle, zoneSeasonInfo, zoneLimitInfo, exceptionInfo,exceptionLocation;
     private Button helpButton;
+    private Button favouriteButton;
     private ScrollView exceptionLayout;
     private Spinner fishSelect;
     private Fish currentFish;
@@ -42,8 +48,9 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     private String[] fishInfo = new String[2];
     private String[] lakeException = new String[3];
     private List<String> listLake = new ArrayList<>();
-
     private DatabaseHelper DB;
+
+    public static final String SHARED_PREFS = "favoriteZonesPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +66,8 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         Toast.makeText(this, "Select a fish from dropdown menu!", Toast.LENGTH_SHORT).show();
 
         Bundle extras = getIntent().getExtras();
-        String zoneName = extras.getString("ZONE");
+        final String zoneName = extras.getString("ZONE");
+        favouriteButton = (Button) findViewById(R.id.favourite_button);
         helpButton = (Button) findViewById(R.id.help_button_regulation);
         exceptionLocation = (TextView) findViewById(R.id.exception_location);
         exceptionLayout = (ScrollView) findViewById(R.id.scroll_exception);
@@ -78,14 +86,40 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         fishSelect.setOnItemSelectedListener(this);
         lakeList.setThreshold(1);
         lakeList.setOnItemClickListener(this);
+
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        final Boolean favouriteSelected = sharedPreferences.getBoolean(zoneName, false);
+        if(favouriteSelected)
+            favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star));
+
+
         fabFish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("FAB clicked");
-                System.out.println(currentFish.getResourceName());
-                Intent intent = new Intent(FishRegulations.this, FishDetails.class);
-                intent.putExtra("FISHES", currentFish);
-                startActivity(intent);
+                String fishName = currentFish.getResourceName();
+
+                if(fishName.equals("sunfish")) {
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "sunfish");
+                    startActivity(intent);
+
+                }else if(fishName.equals("crappie")) {
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "crappie");
+                    startActivity(intent);
+
+                }else if (fishName.equals("pacific_salmon")){
+                    Intent intent = new Intent(FishRegulations.this, FishInfo.class);
+                    intent.putExtra("SOURCE", "pacific_salmon");
+                    startActivity(intent);
+
+                } else {
+                    System.out.println("FAB clicked");
+                    System.out.println(fishName);
+                    Intent intent = new Intent(FishRegulations.this, FishDetails.class);
+                    intent.putExtra("FISHES", currentFish);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -104,13 +138,27 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
             }
         });
 
+        favouriteButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                if(favouriteSelected){
+                    favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star_border));
+                    sharedPreferences.edit().remove(zoneName).apply();
+
+                } else {
+                    favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star));
+                    sharedPreferences.edit().putBoolean(zoneName, true).apply();
+                }
+            }
+        });
+
     }
 
 
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        System.out.println("HELLo");
         lakeException = DB.getExceptionsInfo(Integer.toString(regionNumber), currentFish.getName(), (String)parent.getItemAtPosition(position));
         exceptionLocation.setText(String.format("%s: %s", parent.getItemAtPosition(position), lakeException[0]));
         if(lakeException[2].equals("Unchanged")){
@@ -173,6 +221,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
 
     public List<String> setTitle(String zoneName){
 
