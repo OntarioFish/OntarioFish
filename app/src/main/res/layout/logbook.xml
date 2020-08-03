@@ -6,11 +6,29 @@
     android:layout_height="match_parent"
     >
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logbook_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:text="@string/logbook"
+            android:layout_gravity="start"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray" />
+        android:background="@color/backgroundUsed"
+        android:layout_below="@id/logbook_toolbar"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_save"
