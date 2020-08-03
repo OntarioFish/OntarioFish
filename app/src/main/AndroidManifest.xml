@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".MapsActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,10 +36,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait" />
+<!--        <activity-->
+<!--            android:name=".MapsActivity"-->
+<!--            android:label="@string/title_activity_maps"-->
+<!--            android:screenOrientation="portrait" />-->
         <activity
             android:name=".FishRegulations"
             android:screenOrientation="portrait" />
