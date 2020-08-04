@@ -65,7 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Menu menu = navigationView.getMenu();
         SubMenu subMenu = menu.getItem(1).getSubMenu();
         SharedPreferences sharedPreferences = getSharedPreferences(FishRegulations.SHARED_PREFS, MODE_PRIVATE);
-        Boolean favoriteSelected;
+        boolean favoriteSelected;
 
 
         for(int i = 1; i <= 20; i++){
@@ -111,6 +111,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             super.onBackPressed();
         }
+
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     @Override
@@ -136,11 +138,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-    }
 
     public KmlLayer addLayer(int resourceId){
 
@@ -213,7 +210,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         for(int i = 1; i <=20; i ++){
-            Boolean favoriteChange = sharedPreferences.getBoolean("#zone" + i, false);
+            boolean favoriteChange = sharedPreferences.getBoolean("#zone" + i, false);
             if(favouritesAdded[i - 1] != favoriteChange){
                 if(favoriteChange){
                     subMenu.add(0, i, 0, "Zone " + i);
