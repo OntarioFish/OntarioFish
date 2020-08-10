@@ -47,7 +47,6 @@
         <activity
             android:name=".FishDetails"
             android:screenOrientation="portrait" />
-            android:label="@string/title_activity_maps" />
         <activity android:name=".Logbook" />
         <activity android:name=".EnterLogEntry"/>
         <activity
