@@ -42,7 +42,7 @@
     <string name="fish_name_text_box">Fish Type</string>
 
     <string-array name="fishes">
-        <item>Fish</item>
+        <item> </item>
         <item>Brook Trout</item>
         <item>Channel Catfish</item>
         <item>Common Carp</item>

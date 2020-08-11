@@ -157,10 +157,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case R.id.logbook_menu_item:
                 Intent intent = new Intent(MapsActivity.this, Logbook.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.fish_list_menu_item:
                 intent = new Intent(MapsActivity.this, FishInfo.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
         }
 
