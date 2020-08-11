@@ -17,7 +17,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolder.OnEntryListener, LogbookDialog.LogbookDialogListener {
+public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolder.OnEntryListener, LogbookDeleteDialog.LogbookDialogListener, LogbookEntryDialog.LogbookDialogListener {
 
     ArrayList<MyEntry> mEntryList;
 
@@ -39,10 +39,8 @@ public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolde
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logbook.this, EnterLogEntry.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
+                LogbookEntryDialog logbookEntryDialog = new LogbookEntryDialog();
+                logbookEntryDialog.show(getSupportFragmentManager(), "logbook dialog");
             }
         });
     }
@@ -73,9 +71,9 @@ public class Logbook extends AppCompatActivity implements EntryAdapter.ViewHolde
 
     @Override
     public void OnEntryClick(int position) {
-        LogbookDialog logbookDialog = new LogbookDialog();
-        logbookDialog.show(getSupportFragmentManager(), "logbook dialog");
-        logbookDialog.setPosition(position);
+        LogbookDeleteDialog logbookDeleteDialog = new LogbookDeleteDialog();
+        logbookDeleteDialog.show(getSupportFragmentManager(), "logbook dialog");
+        logbookDeleteDialog.setPosition(position);
     }
 
     @Override

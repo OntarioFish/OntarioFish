@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -48,16 +49,52 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.logbook_entry, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.logbook_entry_text, parent, false);
         return new ViewHolder(v, mOnEntryListener);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         MyEntry currentItem = mEntryList.get(position);
-        String title = currentItem.getFishType() + " · " + currentItem.getFishLocation();
-        String subtitle = currentItem.getFishDate() + " · " +
-                currentItem.getFishSize() + " inches · " + currentItem.getFishWeight() + " lbs";
+
+        String type = currentItem.getFishType();
+        String loc = currentItem.getFishLocation();
+        String date = currentItem.getFishDate();
+        String size = currentItem.getFishSize();
+        String weight = currentItem.getFishWeight();
+
+        String[] entries = new String[] {loc, date, type, size, weight};
+        ArrayList<String> display = new ArrayList<>();
+
+        for (int i = 0; i < entries.length; i ++) {
+            if (!entries[i].equals("")) {
+                if (i == 3) {
+                    display.add(entries[i] + " inches");
+                } else if (i == 4) {
+                    display.add(entries[i] + " lbs");
+                } else {
+                    display.add(entries[i]);
+                }
+            }
+        }
+
+        String title;
+        String subtitle = "";
+
+        if (display.size() == 1) {
+            title = display.get(0);
+        } else if (display.size() == 2) {
+            title = display.get(0) + " · " + display.get(1);
+        } else if (display.size() == 3) {
+            title = display.get(0) + " · " + display.get(1);
+            subtitle = display.get(2);
+        } else if (display.size() == 4) {
+            title = display.get(0) + " · " + display.get(1);
+            subtitle = display.get(2) + " · " + display.get(3);
+        } else {
+            title = display.get(0) + " · " + display.get(1);
+            subtitle = display.get(2) + " · " + display.get(3) + " · " + display.get(4);
+        }
 
         holder.mTextViewLine1.setText(title);
         holder.mTextViewLine2.setText(subtitle);

@@ -1,32 +1,26 @@
 package android.example.ontariofish;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.w3c.dom.Text;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class LogbookDialog extends AppCompatDialogFragment {
+public class LogbookDeleteDialog extends AppCompatDialogFragment {
 
     private TextView fishType;
     private TextView date;
@@ -54,7 +48,7 @@ public class LogbookDialog extends AppCompatDialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = Objects.requireNonNull(getActivity()).getLayoutInflater();
-        View view = inflater.inflate(R.layout.entry_dialog, null);
+        View view = inflater.inflate(R.layout.logbook_entry_click_dialog, null);
         builder.setView(view)
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
@@ -74,30 +68,44 @@ public class LogbookDialog extends AppCompatDialogFragment {
                 })
                 .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //keep empty
-                    }
+                    public void onClick(DialogInterface dialogInterface, int i) {}
                 });
-//                .setNegativeButton("Edit", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        //add code
-//                        //load entry with info from recyclerview
-//                        getActivity().startActivity(new Intent(getActivity(), EnterLogEntry.class));
-//                    }
-//                });
 
-        fishType = view.findViewById(R.id.fish_dialog_type);
+        location = view.findViewById(R.id.fish_dialog_location);
         date = view.findViewById(R.id.fish_dialog_date);
+        fishType = view.findViewById(R.id.fish_dialog_type);
         fishSize = view.findViewById(R.id.fish_dialog_size);
         fishWeight = view.findViewById(R.id.fish_dialog_weight);
-        location = view.findViewById(R.id.fish_dialog_location);
 
-        fishType.setText(mEntryList.get(position).getFishType());
-        date.setText(mEntryList.get(position).getFishDate());
-        fishSize.setText(mEntryList.get(position).getFishSize());
-        fishWeight.setText(mEntryList.get(position).getFishWeight());
-        location.setText(mEntryList.get(position).getFishLocation());
+        if (mEntryList.get(position).getFishLocation().equals("")) {
+            location.setText("Location: Unknown");
+        } else {
+            location.setText("Location: " + mEntryList.get(position).getFishLocation());
+        }
+
+        if (mEntryList.get(position).getFishDate().equals("")) {
+            date.setText("Date: Unknown");
+        } else {
+            date.setText("Date: " + mEntryList.get(position).getFishDate());
+        }
+
+        if (mEntryList.get(position).getFishType().equals("")) {
+            fishType.setText("Type: Unknown");
+        } else {
+            fishType.setText("Type: " + mEntryList.get(position).getFishType());
+        }
+
+        if (mEntryList.get(position).getFishSize().equals("")) {
+            fishSize.setText("Size: Unknown");
+        } else {
+            fishSize.setText("Size: " + mEntryList.get(position).getFishSize() + " inches");
+        }
+
+        if (mEntryList.get(position).getFishWeight().equals("")) {
+            fishWeight.setText("Weight: Unknown");
+        } else {
+            fishWeight.setText("Weight: " + mEntryList.get(position).getFishWeight() + " lbs");
+        }
 
         return builder.create();
     }
@@ -112,9 +120,7 @@ public class LogbookDialog extends AppCompatDialogFragment {
         }
     }
 
-    public interface LogbookDialogListener{
-        //void setTexts(String one, String two, String three, String four, String five);
-    }
+    public interface LogbookDialogListener{}
 
     public void setPosition(int i) {
         position = i;
