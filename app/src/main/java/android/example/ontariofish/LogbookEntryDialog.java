@@ -4,16 +4,19 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -53,6 +56,8 @@ public class LogbookEntryDialog extends AppCompatDialogFragment {
                         EditText line3 = view.findViewById(R.id.editTextSize2);
                         EditText line4 = view.findViewById(R.id.editTextWeight2);
                         EditText line5 = view.findViewById(R.id.editTextDate2);
+
+
                         if (!line1.getSelectedItem().toString().matches("") ||
                                 !line2.getText().toString().matches("") ||
                                 !line3.getText().toString().matches("") ||
