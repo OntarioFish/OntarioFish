@@ -42,10 +42,18 @@
     <string name="fish_name_text_box">Fish Type</string>
 
     <string-array name="fishes">
+        <item>Atlantic Salmon</item>
+        <item>Black Crappie</item>
+        <item>Bluegill</item>
         <item>Brook Trout</item>
+        <item>Brown Trout</item>
         <item>Channel Catfish</item>
+        <item>Chinook Salmon</item>
+        <item>Coho Salmon</item>
         <item>Common Carp</item>
+        <item>Lake Sturgeon</item>
         <item>Lake Trout</item>
+        <item>Lake Whitefish</item>
         <item>Largemouth Bass</item>
         <item>Muskellunge</item>
         <item>Northern Pike</item>
@@ -54,6 +62,7 @@
         <item>Rock Bass</item>
         <item>Sauger</item>
         <item>Smallmouth Bass</item>
+        <item>Splake</item>
         <item>Walleye</item>
         <item>White Crappie</item>
         <item>Yellow Perch</item>
