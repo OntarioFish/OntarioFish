@@ -49,6 +49,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
     private String[] lakeException = new String[3];
     private List<String> listLake = new ArrayList<>();
     private DatabaseHelper DB;
+    private boolean favouriteSelected;
 
     public static final String SHARED_PREFS = "favoriteZonesPrefs";
 
@@ -88,7 +89,7 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         lakeList.setOnItemClickListener(this);
 
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        final Boolean favouriteSelected = sharedPreferences.getBoolean(zoneName, false);
+        favouriteSelected = sharedPreferences.getBoolean(zoneName, false);
         if(favouriteSelected)
             favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star));
 
@@ -145,10 +146,12 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
                 if(favouriteSelected){
                     favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star_border));
                     sharedPreferences.edit().remove(zoneName).apply();
+                    favouriteSelected = false;
 
                 } else {
                     favouriteButton.setBackground(getDrawable(R.drawable.ic_baseline_star));
                     sharedPreferences.edit().putBoolean(zoneName, true).apply();
+                    favouriteSelected = true;
                 }
             }
         });
