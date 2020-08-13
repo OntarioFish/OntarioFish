@@ -1387,33 +1387,33 @@
 16//Walleye//Chenail Ecarte//From the mouth of the Chenail Ecarte at Lake St. Clair to the mouth of the Sydenham River//Open all year//S-6 and C-2; no size limits
 16//Walleye//Sydenham River//From the mouth of the Sydenham River at the Chenail Ecarte to the downstream side of the St. George Street Bridge in the Town of Dresden//Open all year//S-6 and C-2; no size limits
 16//Walleye//Thames River//From the mouth of the Thames River at Lake St. Clair to the downstream side of the Keil Street Bridge in the Municipality of Chatham//Open all year//S-6 and C-2; no size limits
-17//Pacific Salmon//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Pacific Salmon//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Pacific Salmon//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Pacific Salmon//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Pacific Salmon//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Pacific Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
+17//Pacific Salmon//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Pacific Salmon//Northumberland County//All waters downstream of Highway 2, except the Ganaraska River which may only be fished downstream of the south side of the C.P.R. bridge//Open from fourth Saturday in April to December 31 (extended fall season)//Zone-wide limits apply?
-17//Atlantic Salmon//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Atlantic Salmon//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Atlantic Salmon//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Atlantic Salmon//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Atlantic Salmon//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Atlantic Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
+17//Atlantic Salmon//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Atlantic Salmon//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Atlantic Salmon//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Atlantic Salmon//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Atlantic Salmon//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Atlantic Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apply
 17//Atlantic Salmon//Northumberland County//All waters downstream of Highway 2, except the Ganaraska River which may only be fished downstream of the south side of the C.P.R. bridge//Open from fourth Saturday in April to December 31 (extended fall season)//Zone-wide limits apply?
-17//Brown Trout//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Brown Trout//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Brown Trout//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Brown Trout//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Brown Trout//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Brown Trout//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
+17//Brown Trout//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Brown Trout//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Brown Trout//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Brown Trout//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Brown Trout//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Brown Trout//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Brown Trout//Northumberland County//All waters downstream of Highway 2, except the Ganaraska River which may only be fished downstream of the south side of the C.P.R. bridge//Open from fourth Saturday in April to December 31 (extended fall season)//Zone-wide limits apply?
-17//Rainbow Trout//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Rainbow Trout//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Rainbow Trout//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Rainbow Trout//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Rainbow Trout//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
-17//Rainbow Trout//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wied limits apple
+17//Rainbow Trout//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Rainbow Trout//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Rainbow Trout//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Rainbow Trout//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Rainbow Trout//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Rainbow Trout//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Rainbow Trout//Northumberland County//All waters downstream of Highway 2, except the Ganaraska River which may only be fished downstream of the south side of the C.P.R. bridge//Open from fourth Saturday in April to December 31 (extended fall season)//Zone-wide limits apply?
 17//Walleye//Crowe Lake//(44°29’00”N., 77°44’00”W.) - Marmora Township, and the waters of the Crowe River (Marmora and Rawdon Townships)//January 1 to March 1 and second Saturday in May to December 31//Zone-wide limits apply
 17//Walleye//Balsam Lake//(44°34’54”N., 78°51’10”W.) - Bexley Township, including the waters of the Gull River upstream to the dam  at Coboconk, the waters of the Rosedale River between the Trent dam at Rosedale upstream to Balsam Lake, the waters of the Trent Canal between the upstream lock at Rosedale upstream to its junction with the Rosedale River and the waters of the Trent Canal between Balsam Lake and Mitchell Lake//Zone-wide seasons apply//S-3 and C-1; none between 37-55 cm

@@ -17,22 +17,22 @@
                                         of shallow water, randomly scattering eggs which then attach to the vegetation.</string>
 
     <!--Input data for Largemouth Bass.-->
-    <string name="largemouth_bass_overview">The most popular gamefish in North America, the Largemouth Bass are sought after for there vigorous resistance.</string>
+    <string name="largemouth_bass_overview">The most popular game fish in North America, the Largemouth Bass are sought after for there vigorous resistance.</string>
     <string name="largemouth_bass_appearance"><b>-</b>Back and sides are green to olive.
                                               \n\n<b>-</b>Broken Horizontal stripe along body.
                                               \n\n<b>-</b>Large, wide lower jaw slightly longer than upper jaw.
                                               \n\n<b>-</b>Two joined dorsal fins, separation more obvious than Smallmouth Bass.</string>
     <string name="largemouth_bass_size"><b>-</b>Length: 25-55 centimetres (10-22 inches)
-                                              \n\n<b>-</b>Weight 0.7-1.8 koligrams (1.5-4 pounds)
+                                              \n\n<b>-</b>Weight 0.7-1.8 kilograms (1.5-4 pounds)
                                               \n\n<b>-</b>Ontario record: 4.7 kilograms (10.4 pounds)</string>
     <string name="largemouth_bass_habitat">The Largemouth Bass can be found in the upper levels of warm water of small, shallow lakes or bays. It is almost always found close to soft bottoms, stumps
-                                           and in a variety of sub-emergent and emergent vegetation, especially waterlilies, cattails and pondweeds.
+                                           and in a variety of sub-emergent and emergent vegetation, especially waterlilies, cattails and pond weeds.
                                            \n\nThe Largemouth Bass prefers spawning areas with a firm bottom of sand, mud or gravel.</string>
 
     <!--Input data for Yellow Perch-->
     <string name="yellow_perch_overview">The Yellow Perch is a freshwater fish with an almost circumpolar distribution in the northern hemisphere and is both a important recreational and commercial fish species.</string>
     <string name="yellow_perch_appearance"><b>-</b>An elongate, oval body.
-                                           \n\n<b>-</b>Two well-seperated dorsal fins.
+                                           \n\n<b>-</b>Two well-separated dorsal fins.
                                            \n\n<b>-</b>6 to 8 dark, vertical bands on side.
                                            \n\n<b>-</b>Light yellow body with white underside.
                                            \n\n<b>-</b>Large mouth, extending to below the middle of the eye.</string>
@@ -42,7 +42,7 @@
     <string name="yellow_perch_habitat">The Yellow Perch is a cool-water species and is most abundant in the open water of lakes with moderate vegetation, clear water and bottoms of muck, sand or gravel.
                                         \n\nYellow Perch spawn in lake shallows or rivers near aquatic plants or other cover. Yellow Perch do not make nests.</string>
 
-    <!--Input data for Wallete-->
+    <!--Input data for Walleye-->
     <string name="walleye_overview">The Walleye is a perch like fish and a keen eyesight with the oldest reported age for the fish being 29.</string>
     <string name="walleye_appearance"><b>-</b>Large, elongated body.
                                       \n\n<b>-</b>Back is olive-green to brown; side paler with yellow flecks.
@@ -61,7 +61,7 @@
                                           \n\n<b>-</b>Dark vertical bands on light background, at time spotted or clear.
                                           \n\n<b>-</b>Beige to white belly.
                                           \n\n<b>-</b>Partially scaled cheek and gill cover.
-                                          \n\n<b>-</b>12-18 pores on underside of lower jaw.</string>
+                                          \n\n<b>-</b>12–18 pores on underside of lower jaw.</string>
     <string name="muskellunge_size"><b>-</b>Length: 71-137 centimetres (28-40 inches)
                                             \n\n<b>-</b>Weight: 4-11 kilograms (8-23 pounds)
                                             \n\n<b>-</b>Ontario record: 29.5 kilograms (65.0 pounds)</string>
@@ -177,7 +177,7 @@
     <string name="lake_trout_overview">Lake trout are the largest of the freshwater char and have been reported to live up to 40 years.</string>
     <string name="lake_trout_appearance"><b>-</b>Green, grey, brown or almost black back.
                                          \n\n<b>-</b>White belly and light sides.
-                                         \n\n<b>-</b>Light wormlike markings and spot on dark background.
+                                         \n\n<b>-</b>Light worm-like markings and spot on dark background.
                                          \n\n<b>-</b>Deeply forked tail.
                                          \n\n<b>-</b>White leading edge on lower fins, but no black lines.</string>
     <string name="lake_trout_size"><b>-</b>Length: 30-80 centimetres (12-31 inches)
@@ -256,7 +256,7 @@
     <string name="splake_overview">The Splake is a hatchery made cross between a Brook Trout and a Lake Trout.</string>
     <string name="splake_appearance"><b>-</b>Slightly deep-bodied.
                                      \n\n<b>-</b>Hybrid of Brook Trout and Lake Trout, between them in size.
-                                     \n\n<b>-</b>Tricoloured fins.
+                                     \n\n<b>-</b>Tricolour fins.
                                      \n\n<b>-</b>Light spots on a dark background, some red spots.
                                      \n\n<b>-</b>Slightly forked tail.</string>
     <string name="splake_size"><b>-</b>Length: 25-46 centimetres (10-18 inches)
@@ -282,7 +282,7 @@
 
     <!--Input data for Coho Salmon-->
     <string name="coho_salmon_overview">Coho Salmon are a Pacific coast fish that were originally introduced in the later 1870s.</string>
-    <string name="coho_salmon_appearance"><b>-</b>Deeep-bodied but thin from side to side.
+    <string name="coho_salmon_appearance"><b>-</b>Deep-bodied but thin from side to side.
                                           \n\n<b>-</b>Blue or green back.
                                           \n\n<b>-</b>Silvery sides.
                                           \n\n<b>-</b>White belly.
@@ -320,5 +320,16 @@
                                       \n\n<b>-</b>Ontario record: 1.7 kilograms (3.8 pounds)</string>
     <string name="black_crappie_habitat">Black Crappie can be found throughout southern Ontario, including protected bays of the southern Great Lakes and in northwestern Ontario.
                                          Black Crappie prefer warm, clear, vegetated lakes, ponds and rivers with littler current.</string>
+
+
+    <!--Input data for Lake Herring-->
+    <string name="lake_herring_overview">The Lake Herring is a commercial and recreational fish that is also known as the Cisco.</string>
+    <string name="lake_herring_appearance"><b>-</b>Silver sides.
+                                           \n\n<b>-</b>Mouth not overhung by snout.
+                                           \n\n<b>-</b>Mouth ends before middle of eye.</string>
+    <string name="lake_herring_size"><b>-</b>Length: 20–30 centimetres (8–12 inches)
+                                     \n\n<b>-</b>Weight: 0.34–0.570 kilograms (0.75 – 1.25 pounds)
+                                     \n\n<b>-</b>Ontario record: 1.96 kilograms (4.33 pounds)</string>
+    <string name="lake_herring_habitat">The Lake Herring lives in the open waters of lakes and rivers to the coastal waters of Hudson Bay.</string>
 
 </resources>

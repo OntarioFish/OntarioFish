@@ -207,7 +207,7 @@
 14//Brown Trout//Open all year//S-5 and C-2
 14//Channel Catfish//Open all year//S-12 and C-6
 14//Crappie//Open all year//S-30 and C-10
-14//Lake Herring (cisco)//Open all year//S-25 and C-12
+14//Lake Herring//Open all year//S-25 and C-12
 14//Lake Sturgeon//Closed all year//Closed all year
 14//Lake Trout//January 1 to September 30 and December 1 to December 31//S-2 and C-1
 14//Lake Whitefish//Open all year//S-12 and C-6
@@ -258,7 +258,7 @@
 16//Sunfish//Open all year//S-50 and C-25
 16//Walleye//January 1 to March 15 and second Saturday in May to December 31//S-4 and C-2; not more than 1 greater than 46 cm. Includes any combination with Sauger
 16//Walleye//January 1 to March 15 and second Saturday in May to December 31//S-4 and C-2; not more than 1 greater than 46 cm. Includes any combination with Walleye
-16//Yellow Perch//Open all yaer//S-50 and C-25
+16//Yellow Perch//Open all year//S-50 and C-25
 17//Atlantic Salmon//Fourth Saturday in April to September 30//S-0 and C-0
 17//Brook Trout//Fourth Saturday in April to September 30//S-2 and C-1
 17//Brown Trout//Fourth Saturday in April to September 30//S-5 and C-2

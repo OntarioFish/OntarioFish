@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">OntarioFish</string>
-    <string name="title_main_string">Ontario Fishing</string>
+    <string name="title_main_string">OntarioFish</string>
     <string name="view_fish_button">Fish</string>
     <string name="record_size_card">Record: %1$s</string>
     <string name="logbook">Logbook</string>
@@ -18,8 +18,8 @@
     <string name="exception_location_header">Location</string>
     <string name="exception_location_info">%s: %s</string>
     <string name="map_toolbar_title">Map</string>
-    <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!\n\n\n<b>Warning:</b> Although zone information is taken from the Government of Ontario the following database data may be out of date. When ensure, check official documents provided by the Government of Ontario.  </string>
-    <string name="regulation_alert_dialog">Select a fish from the drop down menu at the top of the screen. Displayed below will be the season and limits. \'S\' stands for sport license and \'C\' stands for conservation.
+    <string name="map_alert_dialog">Zoom in and find the general location of where you want to fish and then tap on the map to pull up zone information!\n\n\n<b>Warning:</b> Although zone information is taken from the Government of Ontario the following database data may be out of date. When unsure, check official documents provided by the Government of Ontario.  </string>
+    <string name="regulation_alert_dialog">Select a fish from the drop down menu at the top of the screen. Displayed below will be the season and limits. \'S\' stands for sport license and \'C\' stands for conservation. The number beside S or C indicates how many fish you can catch. Example: C-2 means conservations licence with a max of 2 fish per day.
                                            \n\nIf available, enter your lake in the text box to see if there are any exceptions for the lake!</string>
     <string name="fish_info_title">Fish</string>
     <string name="title_activity_main2">MainActivity</string>

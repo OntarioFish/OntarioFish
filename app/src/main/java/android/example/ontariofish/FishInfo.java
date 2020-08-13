@@ -112,6 +112,7 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         Fish chinookSalmon = new Fish("Chinook Salmon", "chinook_salmon");
         Fish cohoSalmon = new Fish("Coho Salmon", "coho_salmon");
         Fish carp = new Fish("Common Carp", "common_carp");
+        Fish lakeHerring = new Fish("Lake Herring", "lake_herring");
         Fish lakeSturgeon = new Fish("Lake Sturgeon", "lake_sturgeon");
         Fish lakeTrout = new Fish("Lake Trout", "lake_trout");
         Fish lakeWhiteFish = new Fish("Lake Whitefish", "lake_whitefish");
@@ -137,6 +138,7 @@ public class FishInfo extends AppCompatActivity implements FishAdapter.OnFishLis
         fishList.add(chinookSalmon);
         fishList.add(cohoSalmon);
         fishList.add(carp);
+        fishList.add(lakeHerring);
         fishList.add(lakeSturgeon);
         fishList.add(lakeTrout);
         fishList.add(lakeWhiteFish);
