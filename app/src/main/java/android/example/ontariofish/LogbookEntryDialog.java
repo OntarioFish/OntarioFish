@@ -57,7 +57,7 @@ public class LogbookEntryDialog extends AppCompatDialogFragment {
         final EditText line2 = view.findViewById(R.id.editTextLocation2);
         final EditText line3 = view.findViewById(R.id.editTextSize2);
         final EditText line4 = view.findViewById(R.id.editTextWeight2);
-        final TextView line5 = view.findViewById(R.id.editTextDate2);
+        final EditText line5 = view.findViewById(R.id.editTextDate2);
 
         line5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +110,8 @@ public class LogbookEntryDialog extends AppCompatDialogFragment {
                 });
         return builder.create();
     }
+
+
 
     @Override
     public void onAttach(Context context) {
