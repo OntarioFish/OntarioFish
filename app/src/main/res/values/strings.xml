@@ -36,7 +36,7 @@
 
     <string name="save_entry">Save</string>
     <string name="location_text_box">Location</string>
-    <string name="date_text_box">YYYY-MM-DD</string>
+    <string name="date_text_box">MM-DD-YYYY</string>
     <string name="size_text_box">Size (Inches)</string>
     <string name="weight_text_box">Weight (Pounds)</string>
     <string name="fish_name_text_box">Fish Type</string>
