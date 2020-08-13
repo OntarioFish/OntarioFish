@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
@@ -85,18 +86,16 @@ public class LogbookEntryDialog extends AppCompatDialogFragment {
 
         builder.setView(view)
                 .setPositiveButton("Save", new DialogInterface.OnClickListener() {
-
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
-                        if (!line1.getSelectedItem().toString().matches("") ||
-                                !line2.getText().toString().matches("") ||
-                                !line3.getText().toString().matches("") ||
-                                !line4.getText().toString().matches("") ||
+                        if (!line2.getText().toString().matches("") &&
                                 !line5.getText().toString().matches("")) {
                             saveData(line1.getSelectedItem().toString(), line2.getText().toString(),
                                     line3.getText().toString(), line4.getText().toString(),
                                     line5.getText().toString());
+                        } else {
+                            Toast toast = Toast.makeText(getActivity(), "Entry not saved. Date and location required.", Toast.LENGTH_LONG);
+                            toast.show();
                         }
                         getActivity().finish();
                         getActivity().overridePendingTransition(0, 0);
