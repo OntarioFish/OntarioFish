@@ -40,12 +40,12 @@
         <activity
             android:name=".FishDetails"
             android:screenOrientation="portrait" />
-        <activity android:name=".Logbook" />
+        <activity
+            android:name=".Logbook"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".FishInfo"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/FishInfoTheme" />
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
