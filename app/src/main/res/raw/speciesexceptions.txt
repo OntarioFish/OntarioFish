@@ -1392,7 +1392,7 @@
 17//Pacific Salmon//Factory Creek//(Cobourg Creek or Cobourg Brook) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Pacific Salmon//Gages Creek//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Pacific Salmon//Ganaraska River//Between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
-17//Pacific Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
+17//Pacific Salmon//Regional Municipality of Durham//All waters lying between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apply
 17//Pacific Salmon//Northumberland County//All waters downstream of Highway 2, except the Ganaraska River which may only be fished downstream of the south side of the C.P.R. bridge//Open from fourth Saturday in April to December 31 (extended fall season)//Zone-wide limits apply?
 17//Atlantic Salmon//Cobourg Brook//(Cobourg Creek or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple
 17//Atlantic Salmon//Cobourg Creek//(Cobourg Brook or Factory Creek) - between the southerly limit of the C.N.R. right-of-way and Lake Ontario//Open all year//Zone-wide limits apple

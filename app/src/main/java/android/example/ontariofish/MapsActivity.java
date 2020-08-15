@@ -173,6 +173,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
                 intent.putExtra("ZONE", "#zone" + i);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         }
         return true;
@@ -194,7 +195,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             Intent intent = new Intent(MapsActivity.this, FishRegulations.class);
                             intent.putExtra("ZONE", feature.getId());
                             startActivity(intent);
-
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         }
                     });
                 }

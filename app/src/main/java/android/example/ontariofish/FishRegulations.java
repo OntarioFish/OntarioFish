@@ -335,5 +335,11 @@ public class FishRegulations extends AppCompatActivity implements AdapterView.On
         return regulationFishTemp;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
 
 }
