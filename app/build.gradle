@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "android.example.ontariofish"
+        applicationId "com.bagotapps.ontariofish"
         minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
