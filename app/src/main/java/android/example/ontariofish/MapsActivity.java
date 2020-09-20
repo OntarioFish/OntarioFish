@@ -226,22 +226,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             favouritesAdded[i - 1] = favoriteChange;
         }
     }
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        SharedPreferences sharedPreferences = getSharedPreferences(FishRegulations.SHARED_PREFS, MODE_PRIVATE);
-//
-//        for(int i = 1; i <= 20; i++){
-//            boolean isFavorite = sharedPreferences.getBoolean("#zone" + i, false);
-//            if(isFavorite) {
-//                favouritesAdded[i - 1] = true;
-//            } else {
-//                favouritesAdded[i - 1] = false;
-//            }
-//            System.out.println(favouritesAdded[i - 1]);
-//        }
-//
-//        System.out.println("*****************");
-//    }
 }

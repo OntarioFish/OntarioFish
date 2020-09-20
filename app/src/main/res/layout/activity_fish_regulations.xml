@@ -45,127 +45,31 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_fish_info"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/fish_icon_white"
-        android:scaleType="fitXY" />
 
-    <LinearLayout
-        android:id="@+id/main_zone_info"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/regulations_toolbar">
+        android:layout_below="@id/regulations_toolbar"
+        android:background="#534bae"
+        style="@style/AppTabLayout">
 
-        <Spinner
-            android:id="@+id/fish_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp" />
-
-        <TextView
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/zone_season_heading"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:text="Species Regulations" />
 
-        <TextView
-            android:id="@+id/zone_season"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:textSize="14sp" />
-
-        <TextView
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:text="@string/zone_limit_heading"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:text="Waterbody Exceptions" />
 
-        <TextView
-            android:id="@+id/zone_limit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:textSize="14sp" />
+    </com.google.android.material.tabs.TabLayout>
 
-        <AutoCompleteTextView
-            android:id="@+id/lake_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="@string/exception_hint" />
-    </LinearLayout>
-    <ScrollView
-        android:id="@+id/scroll_exception"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="4dp"
-        android:layout_below="@id/main_zone_info">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:text="@string/exception_location_header"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+        android:layout_below="@id/tab_layout" />
 
-            <TextView
-                android:id="@+id/exception_location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:text="@string/exception_header"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/exception_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

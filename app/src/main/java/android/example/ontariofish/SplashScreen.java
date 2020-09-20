@@ -1,12 +1,9 @@
 package android.example.ontariofish;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Window;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +16,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private List<RegulationSample> regulationSamples= new ArrayList<>();
     private List<ExceptionSample> exceptionSamples= new ArrayList<>();
-
+    private List<WaterbodyExceptionSample> waterbodySamples = new ArrayList<>();
     DatabaseHelper MyDb;
 
     @Override
@@ -39,6 +36,11 @@ public class SplashScreen extends AppCompatActivity {
         String[] checker2 = MyDb.getExceptionsInfo("2", "Brook Trout", "Blue Lake");
         if (checker2[0].equals("0")) {
             readDataFishExceptions();
+        }
+
+        String[] checker3 = MyDb.getExceptionsInfo("2", "Brook Trout", "Blue Lake");
+        if (checker2[0].equals("0")) {
+            readWaterbodyExceptions();
         }
 
         Intent intent = new Intent(this, MapsActivity.class);
@@ -127,5 +129,64 @@ public class SplashScreen extends AppCompatActivity {
             MyDb.insertDataFishExceptions(currentRegion, currentName, currentLake, currentInfo, currentSeason, currentLimits);
         }
 
+    }
+
+    public void readWaterbodyExceptions(){
+
+        InputStream is = getResources().openRawResource(R.raw.exceptionswaterbody);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line;
+
+        try{
+            while((line = reader.readLine()) != null){
+
+                String[] tokens = line.split("//");
+
+                WaterbodyExceptionSample sample = new WaterbodyExceptionSample();
+                sample.setInfo1(tokens[0]);
+                sample.setInfo2(tokens[1]);
+                sample.setInfo3(tokens[2]);
+                sample.setInfo4(tokens[3]);
+                sample.setInfo5(tokens[4]);
+                sample.setInfo6(tokens[5]);
+                sample.setInfo7(tokens[6]);
+                sample.setInfo8(tokens[7]);
+                sample.setInfo9(tokens[8]);
+                sample.setInfo10(tokens[9]);
+                sample.setInfo11(tokens[10]);
+                sample.setInfo11(tokens[11]);
+                sample.setInfo11(tokens[12]);
+                sample.setInfo11(tokens[13]);
+                sample.setInfo11(tokens[14]);
+
+                waterbodySamples.add(sample);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for(WaterbodyExceptionSample sample : waterbodySamples){
+            String info1 = sample.getInfo1();
+            String info2 = sample.getInfo2();
+            String info3 = sample.getInfo3();
+            String info4 = sample.getInfo4();
+            String info5 = sample.getInfo5();
+            String info6 = sample.getInfo6();
+            String info7 = sample.getInfo7();
+            String info8 = sample.getInfo8();
+            String info9 = sample.getInfo9();
+            String info10 = sample.getInfo10();
+            String info11 = sample.getInfo11();
+            String info12 = sample.getInfo12();
+            String info13 = sample.getInfo13();
+            String info14 = sample.getInfo14();
+            String info15 = sample.getInfo15();
+
+            MyDb.insertDataWaterbodyExceptions(info1, info2, info3, info4, info5, info6, info7, info8, info9, info10, info11, info12, info13, info14, info15);
+
+
+        }
     }
 }
