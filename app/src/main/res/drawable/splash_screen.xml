@@ -2,12 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@color/colorPrimary"/>
+        android:drawable="@color/updated_ic_launcher_background"/>
 
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/fish_icon_white_small"/>
+            android:src="@drawable/fishing_rod_black_256"/>
     </item>
 
 </layer-list>
