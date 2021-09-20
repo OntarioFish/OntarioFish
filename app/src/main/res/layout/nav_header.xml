@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="140dp"
-    android:background="@color/updated_ic_launcher_background"
+    android:background="@color/colorPrimary"
     android:gravity="start|center_vertical"
     android:padding="16dp"
     android:orientation="vertical">
@@ -11,7 +11,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/fishing_rod_black_512"/>
+        android:src="@drawable/fish_icon_white"/>
 
 
 </LinearLayout>

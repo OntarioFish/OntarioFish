@@ -14,8 +14,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/updated_ic_launcher_background"
-        android:src="@drawable/fishing_rod_black_512"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/fish_icon_white"
         android:scaleType="fitXY" />
 
     <LinearLayout
